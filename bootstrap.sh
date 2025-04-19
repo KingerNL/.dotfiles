@@ -30,6 +30,28 @@ if [ "$SHELL" != "$(which zsh)" ]; then
 fi
 
 # --------------------------
+# Install Neovim AppImage (latest)
+# --------------------------
+if ! command -v nvim &> /dev/null; then
+  echo "📥 Installing Neovim AppImage..."
+  mkdir -p ~/.local/bin
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o ~/.local/bin/nvim
+  chmod +x ~/.local/bin/nvim
+  echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# --------------------------
+# Install Oh My Zsh (if not already installed)
+# --------------------------
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  echo "🧙 Installing Oh My Zsh..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+  echo "✅ Oh My Zsh already installed"
+fi
+
+# --------------------------
 # Install Starship prompt
 # --------------------------
 if ! command -v starship &> /dev/null; then
@@ -58,29 +80,6 @@ if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
 else
   echo "✅ zsh-syntax-highlighting already installed"
-fi
-
-
-# --------------------------
-# Install Neovim AppImage (latest)
-# --------------------------
-if ! command -v nvim &> /dev/null; then
-  echo "📥 Installing Neovim AppImage..."
-  mkdir -p ~/.local/bin
-  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage -o ~/.local/bin/nvim
-  chmod +x ~/.local/bin/nvim
-  echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
-  export PATH="$HOME/.local/bin:$PATH"
-fi
-
-# --------------------------
-# Install Oh My Zsh (if not already installed)
-# --------------------------
-if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo "🧙 Installing Oh My Zsh..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-else
-  echo "✅ Oh My Zsh already installed"
 fi
 
 # --------------------------
