@@ -27,7 +27,7 @@ This repository contains all the key configuration files I use to create a power
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/KingerNL/dotfiles ~/.dotfiles
+git clone https://github.com/KingerNL/.dotfiles
 cd ~/.dotfiles
 ./bootstrap.sh
 ```
