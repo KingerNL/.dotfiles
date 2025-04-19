@@ -4,7 +4,8 @@ ZSH_THEME=""
 # Add local binaries (e.g. Neovim AppImage)
 export PATH="$HOME/.local/bin:$PATH"
 
-# Oh My Zsh
+# Oh My Zsh (fixes sourcing issue)
+export ZSH="$HOME/.oh-my-zsh"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 

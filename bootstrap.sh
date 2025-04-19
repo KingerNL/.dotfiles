@@ -30,6 +30,38 @@ if [ "$SHELL" != "$(which zsh)" ]; then
 fi
 
 # --------------------------
+# Install Starship prompt
+# --------------------------
+if ! command -v starship &> /dev/null; then
+  echo "🚀 Installing Starship prompt..."
+  curl -sS https://starship.rs/install.sh | sh -s -- -y
+else
+  echo "✅ Starship already installed"
+fi
+
+# --------------------------
+# Install zsh plugins (autosuggestions + syntax highlighting)
+# --------------------------
+ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+
+# Autosuggestions
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
+  echo "✨ Installing zsh-autosuggestions..."
+  git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+else
+  echo "✅ zsh-autosuggestions already installed"
+fi
+
+# Syntax Highlighting
+if [ ! -d "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting" ]; then
+  echo "🎨 Installing zsh-syntax-highlighting..."
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+else
+  echo "✅ zsh-syntax-highlighting already installed"
+fi
+
+
+# --------------------------
 # Install Neovim AppImage (latest)
 # --------------------------
 if ! command -v nvim &> /dev/null; then
@@ -42,17 +74,28 @@ if ! command -v nvim &> /dev/null; then
 fi
 
 # --------------------------
-# Install Oh My Zsh if not already installed
+# Install Oh My Zsh (if not already installed)
 # --------------------------
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "🧙 Installing Oh My Zsh..."
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+  echo "✅ Oh My Zsh already installed"
 fi
+
+# --------------------------
+# Install Nerd Fonts from dotfiles/fonts
+# --------------------------
+echo "🎨 Installing Nerd Font(s)..."
+mkdir -p ~/.local/share/fonts
+cp -f ./fonts/*.ttf ~/.local/share/fonts/
+fc-cache -fv > /dev/null
+echo "✅ Fonts installed and cache updated."
 
 # --------------------------
 # Run install.sh for symlinks
 # --------------------------
-echo "🔗 Running dotfile symlinking script..."
+echo "🔗 Linking dotfiles..."
 ./install.sh
 
 # --------------------------
@@ -63,5 +106,5 @@ if command -v dconf &> /dev/null && [ -f ./tilix/tilix.dconf ]; then
   dconf load /com/gexperts/Tilix/ < ./tilix/tilix.dconf
 fi
 
-echo "✅ Bootstrap complete! You may want to reboot or log out and back in."
+echo "✅ Bootstrap complete! Restart terminal or log out and back in to apply all changes."
 
