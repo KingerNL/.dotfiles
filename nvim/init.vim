@@ -1,4 +1,5 @@
 call plug#begin('~/.local/share/nvim/plugged')
+
 Plug 'tpope/vim-sensible'
 
 " Copilot and coc for autocompletion
@@ -16,17 +17,38 @@ Plug 'sainnhe/gruvbox-material'
 " Treesitter core plugin
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+let g:python3_host_prog = '/usr/bin/python3'
+
 " Dropbar
 Plug 'Bekaboo/dropbar.nvim'
+
+" comment out code
+Plug 'numToStr/Comment.nvim'
+
+" Bufferline (tab bar)
+Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
+
+Plug 'MunifTanjim/nui.nvim'
+Plug 'folke/noice.nvim'
+
+Plug 'gelguy/wilder.nvim'
 
 call plug#end()
 
 " Set color scheme
 set termguicolors
-colorscheme gruvbox-material  " or your preferred one
+colorscheme gruvbox-material
+
+" Override bufferline background color after colorscheme is applied
+highlight BufferLineFill guibg=#2c2c2c
 
 " Enable mouse support
 set mouse=a
+
+" Enable line numbers
+let mapleader = " "
+set showtabline=2
+set number
 
 " use the system clipboard for yank, delete, change, and put operations
 set clipboard=unnamedplus
@@ -39,7 +61,6 @@ augroup END
 " Enable wrap-around for arrow keys (similar to VSCode)
 set whichwrap+=<,>,[,]
 
-let g:coc_disable_startup_warning = 2
 let g:coc_disable_startup_warning = 1
 
 " Map Ctrl+A to select all text
@@ -77,6 +98,12 @@ inoremap <silent><expr> <Tab> "\<Tab>"
 " Accept CoC completion with Enter
 inoremap <silent><expr> <CR> pumvisible() ? coc#_select_confirm() : "\<CR>"
 
+" Map Ctrl + / for normal mode (toggle current line)
+nnoremap <C-_> :lua require('Comment.api').toggle.linewise.current()<CR>
+"
+" Map Ctrl + / for visual mode (toggle selection)
+xnoremap <C-_> :lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>
+
 " Enable nvim-tree
 lua << EOF
 require("nvim-tree").setup({
@@ -106,7 +133,56 @@ vim.api.nvim_create_autocmd("VimEnter", {
   end,
 })
 
-
--- 🧠 Dropbar setup
+-- Dropbar setup
 require("dropbar").setup()
+
+-- comment out code
+require('Comment').setup()
+
+require("noice").setup({
+  cmdline = {
+    view = "cmdline",
+    format = {
+      cmdline = { icon = "", title = "Command" },
+    },
+  },
+  messages = {
+    enabled = true,
+  },
+  popupmenu = {
+    enabled = true,
+  },
+  lsp = {
+    progress = { enabled = false },
+    hover = { enabled = false },
+    signature = { enabled = false },
+  },
+})
+
+local wilder = require('wilder')
+wilder.setup({ modes = {':', '/', '?'} })
+wilder.set_option('renderer', wilder.popupmenu_renderer(
+  wilder.popupmenu_border_theme({
+    border = 'rounded',
+    highlights = {
+      border = 'Normal',
+      accent = 'Statement',
+    },
+    highlighter = wilder.basic_highlighter(),
+  })
+))
+
+-- bufferline (tab bar)
+require("bufferline").setup({
+  options = {
+    offsets = {
+      {
+        filetype = "NvimTree",
+        text = "",
+        padding = 1
+      }
+    }
+  }
+})
 EOF
+

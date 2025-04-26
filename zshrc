@@ -5,12 +5,17 @@ ZSH_THEME=""
 export PATH="$HOME/.local/bin:$PATH"
 
 # Oh My Zsh (fixes sourcing issue)
+DISABLE_MAGIC_FUNCTIONS=true
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Starship prompt
 eval "$(starship init zsh)"
+
+# conda add to path
+# export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize
+
 
 # Node Version Manager (nvm)
 export NVM_DIR="$HOME/.nvm"
