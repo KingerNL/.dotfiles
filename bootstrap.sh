@@ -2,9 +2,6 @@
 
 set -e
 
-# Get the directory where the script is located
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
 echo "🚀 Starting full system bootstrap..."
 
 # --------------------------
@@ -103,12 +100,8 @@ echo "🔗 Linking dotfiles..."
 # --------------------------
 # Restore Tilix layout
 # --------------------------
-if [ -f "$SCRIPT_DIR/tilix/tilix.dconf" ]; then
-  echo "🖥️  Restoring Tilix layout..."
-  dconf load /com/gexperts/Tilix/ < "$SCRIPT_DIR/tilix/tilix.dconf"
-else
-  echo "⚠️  No Tilix configuration found, skipping."
-fi
+echo "🖥️  Restoring Tilix layout..."
+dconf load /com/gexperts/Tilix/ < "$SCRIPT_DIR/tilix/tilix.dconf"
 
 echo "✅ Bootstrap complete! Restart terminal or log out and back in to apply all changes."
 
