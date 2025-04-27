@@ -32,4 +32,4 @@ cd ~/.dotfiles
 ./bootstrap.sh
 ```
 
-
+Don't run sudo ./bootstrap.sh, it will not work.

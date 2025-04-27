@@ -36,14 +36,14 @@ cursor-foreground-color='#ffffff'
 cursor-shape='ibeam'
 custom-command="zsh -c 'neofetch --ascii_distro Windows7 --package_managers off; exec zsh'"
 custom-hyperlinks=@as []
-default-size-columns=148
-default-size-rows=60
+default-size-columns=240
+default-size-rows=80
 delete-binding='delete-sequence'
 dim-transparency-percent=0
 draw-margin=0
 encoding='UTF-8'
 exit-action='hold'
-font='Monospace Bold 14'
+font='CaskaydiaCove Nerd Font Mono Bold 12'
 foreground-color='#DEDE54545454'
 highlight-background-color='#000000'
 highlight-colors-set=false
@@ -72,3 +72,5 @@ visible-name='settings_murt'
 [profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
 login-shell=false
 visible-name='Default'
+
+
