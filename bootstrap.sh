@@ -87,7 +87,7 @@ fi
 # --------------------------
 echo "🎨 Installing Nerd Font(s)..."
 mkdir -p ~/.local/share/fonts
-cp -f ./fonts/*.ttf ~/.local/share/fonts/
+cp -f ./fonts/*.TTF ~/.local/share/fonts/
 fc-cache -fv > /dev/null
 echo "✅ Fonts installed and cache updated."
 
