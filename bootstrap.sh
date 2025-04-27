@@ -3,7 +3,7 @@
 set -e
 
 # Get the directory where the script is located
-dconf load /com/gexperts/Tilix/ < "$SCRIPT_DIR/tilix/tilix.dconf"
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "🚀 Starting full system bootstrap..."
 
