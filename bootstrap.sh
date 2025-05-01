@@ -71,7 +71,7 @@ fi
 # --------------------------
 # Install Neovim AppImage (only for apt-based systems)
 # --------------------------
-echo "📥 [4/12] Checking Neovim installation..."
+echo "📥 [4a/12] Checking Neovim installation..."
 if ! command -v nvim &> /dev/null; then
   if [ "$PM" = "apt" ]; then
     echo "📥 Installing Neovim AppImage..."
@@ -85,6 +85,25 @@ if ! command -v nvim &> /dev/null; then
   fi
 else
   echo "✅ Neovim already installed."
+fi
+
+# --------------------------
+# Install packer.nvim plugin manager
+# --------------------------
+echo "📦 [4b/12] Ensuring packer.nvim is installed..."
+PACKER_DIR="$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
+if [ ! -d "$PACKER_DIR" ]; then
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim "$PACKER_DIR"
+  echo "✅ packer.nvim installed."
+else
+  echo "✅ packer.nvim already present."
+fi
+
+if [ -f "$HOME/.config/nvim/init.lua" ]; then
+  echo "🔄 [4c/12] Syncing Neovim plugins with packer..."
+  nvim --headless +PackerSync +qa
+else
+  echo "⚠️ init.lua not found, skipping plugin sync."
 fi
 
 # --------------------------

@@ -16,6 +16,8 @@ eval "$(starship init zsh)"
 # conda add to path
 # export PATH="$HOME/miniconda3/bin:$PATH"  # commented out by conda initialize
 
+# export to path for ardupilot
+export PATH="$HOME/ardupilot/Tools/autotest:$PATH"
 
 # Node Version Manager (nvm)
 export NVM_DIR="$HOME/.nvm"
