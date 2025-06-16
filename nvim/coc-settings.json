@@ -1,0 +1,7 @@
+{
+	"inlayHint.enable": false,
+	"suggest.noselect": false,
+	"suggest.enablePreselect": true,
+	"acceptSuggestionOnEnter": "always"
+}
+
