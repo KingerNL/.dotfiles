@@ -1,7 +1,7 @@
 # 🧠 Murt's Dotfiles — Neovim + Zsh + Starship + Tilix Dev Environment
 
 Welcome to my personal dev environment setup!  
-This repository contains all the key configuration files I use to create a powerful and portable terminal-based coding experience on Ubuntu 22.04.
+This repository contains all the key configuration files I use to create a powerful and portable terminal-based coding experience on Ubuntu 24.04.
 
 ---
 

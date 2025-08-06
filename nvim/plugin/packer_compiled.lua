@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["alpha-nvim"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "https://github.com/goolord/alpha-nvim"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -99,6 +104,11 @@ _G.packer_plugins = {
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/dropbar.nvim",
     url = "https://github.com/Bekaboo/dropbar.nvim"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   gruvbox = {
     loaded = true,
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/gruvbox",
@@ -109,6 +119,16 @@ _G.packer_plugins = {
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/gruvbox-material",
     url = "https://github.com/sainnhe/gruvbox-material"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   ["noice.nvim"] = {
     loaded = true,
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/noice.nvim",
@@ -118,6 +138,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
+  },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
+    url = "https://github.com/windwp/nvim-autopairs"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -139,10 +169,20 @@ _G.packer_plugins = {
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["todo-comments.nvim"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
+    url = "https://github.com/folke/todo-comments.nvim"
+  },
   ["vim-sensible"] = {
     loaded = true,
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/vim-sensible",
     url = "https://github.com/tpope/vim-sensible"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   },
   ["wilder.nvim"] = {
     loaded = true,
