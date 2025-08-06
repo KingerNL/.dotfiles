@@ -1,4 +1,4 @@
-- Set Python provider
+-- Set Python provider
 vim.g.python3_host_prog = '/usr/bin/python3'
 
 -- Leader key
