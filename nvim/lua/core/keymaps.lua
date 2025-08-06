@@ -30,6 +30,10 @@ keymap("n", "<Tab>", ">>", { noremap = true, silent = true })
 keymap("n", "<S-Tab>", "<<", { noremap = true, silent = true })
 keymap("x", "<S-Tab>", "<<", { noremap = true, silent = true })
 
+-- clears search highlight
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>', { desc = 'Clear search highlight' })
+
+
 -- Comment keymap (with Copilot-safe bind)
 keymap('n', '<C-_>', function()
   require('Comment.api').toggle.linewise.current()
