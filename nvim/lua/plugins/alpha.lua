@@ -40,7 +40,7 @@ dashboard.section.buttons.val = {
   dashboard.button("q", "  Quit", ":qa<CR>"),
 }
 
-dashboard.section.footer.val = "NeoVim is ready, trainer."
+-- dashboard.section.footer.val = "NeoVim is ready, trainer."
 
 
 -- 🚀 SETUP ALPHA
