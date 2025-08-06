@@ -16,7 +16,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Display Pokemon-colorscripts
 
-POKE_DIR="$HOME/.cache/pokemon_ascii"
+POKE_DIR="$HOME/.dotfiles/pokemon_ascii"
 POKE_PICK=$(find "$POKE_DIR" -type f | shuf -n 1)
 
 cat "$POKE_PICK" | fastfetch -c $HOME/.config/fastfetch/config-pokemon.jsonc \
@@ -46,4 +46,12 @@ load-nvm() {
 add-zsh-hook -Uz preexec load-nvm
 
 
+# Pyenv configuration
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+# Initialize pyenv
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
