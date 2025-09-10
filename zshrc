@@ -14,8 +14,11 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-# Display Pokemon-colorscripts
+# Alias to open ROS environment in singularity container
+alias roslab='singularity shell ~/tudelft_coursework/robot_software_practicals/ro47003_humble_v8.sif'
 
+
+# Display Pokemon-colorscripts
 POKE_DIR="$HOME/.dotfiles/pokemon_ascii"
 POKE_PICK=$(find "$POKE_DIR" -type f | shuf -n 1)
 
@@ -67,4 +70,5 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
 

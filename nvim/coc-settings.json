@@ -1,7 +1,15 @@
 {
-	"inlayHint.enable": false,
-	"suggest.noselect": false,
-	"suggest.enablePreselect": true,
-	"acceptSuggestionOnEnter": "always"
+  "python.analysis.typeCheckingMode": "basic",  // not "strict"
+  "python.analysis.useLibraryCodeForTypes": true,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportCallIssue": "warning",
+    "reportArgumentType": "warning",
+    "reportAttributeAccessIssue": "warning",
+    "reportOptionalMemberAccess": "information",
+    "reportOptionalOperand": "information",
+    "reportUnknownVariableType": "none",
+    "reportUnknownMemberType": "none",
+    "reportMissingTypeStubs": "none"
+  }
 }
 

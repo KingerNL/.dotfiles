@@ -34,7 +34,7 @@ dashboard.section.header.opts.hl = "DinoOrange"
 
 -- Buttons (remove telescope & add more relevant actions)
 dashboard.section.buttons.val = {
-  dashboard.button("e", " New file", ":ene <BAR> startinsert<CR>"),
+  dashboard.button("e", " New file", ":ene<CR>"),
   dashboard.button("c", "  Edit config", ":e ~/.config/nvim/init.lua<CR>"),
   dashboard.button("t", "󱏒 Toggle file tree", ":NvimTreeToggle<CR>"),
   dashboard.button("q", "  Quit", ":qa<CR>"),
