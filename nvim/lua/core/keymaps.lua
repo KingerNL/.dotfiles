@@ -45,9 +45,14 @@ keymap('v', '<C-_>', function()
   require('Comment.api').toggle.linewise(vim.fn.visualmode())
 end, { noremap = true, silent = true })
 
-vim.api.nvim_set_keymap(
-  "i",
-  "<CR>",
-  [[coc#pum#visible() ? coc#pum#confirm() : "\<CR>"]],
-  { noremap = true, expr = true, silent = true }
-)
+-- Use <CR> to confirm completion, or insert newline if no suggestion is visible
+vim.api.nvim_create_autocmd("User", {
+  pattern = "CocJumpPlaceholder",
+  callback = function()
+    vim.api.nvim_set_keymap("i", "<CR>",
+      [[coc#pum#visible() ? coc#pum#confirm() : "\<CR>"]],
+      { noremap = true, silent = true, expr = true }
+    )
+  end
+})
+
