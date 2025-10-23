@@ -71,4 +71,8 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# --- Enable local X11 display access for Singularity and ROS GUI apps ---
+if command -v xhost >/dev/null 2>&1; then
+    xhost +local:root > /dev/null 2>&1
+fi
 
