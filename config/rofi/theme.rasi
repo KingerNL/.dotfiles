@@ -1,0 +1,52 @@
+* {
+  background: #282828;
+  foreground: #F1E8C2;
+  accent: #EC4935;
+  surface: #32302F;
+  muted: #A89984;
+}
+
+window {
+  width: 42%;
+  border-radius: 10px;
+  background-color: @background;
+  border: 1px solid @accent;
+}
+
+mainbox {
+  padding: 14px;
+}
+
+inputbar {
+  padding: 8px 10px;
+  margin: 0 0 10px 0;
+  background-color: @surface;
+  border-radius: 8px;
+  text-color: @foreground;
+}
+
+listview {
+  lines: 8;
+  spacing: 6px;
+  background-color: transparent;
+}
+
+element {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background-color: transparent;
+  text-color: @foreground;
+}
+
+element selected {
+  background-color: @accent;
+  text-color: #282828;
+}
+
+prompt {
+  text-color: @muted;
+}
+
+entry {
+  text-color: @foreground;
+}

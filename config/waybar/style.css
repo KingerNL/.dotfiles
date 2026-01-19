@@ -1,0 +1,46 @@
+@define-color background #282828;
+@define-color foreground #F1E8C2;
+@define-color accent #EC4935;
+@define-color surface #32302F;
+@define-color muted #A89984;
+@define-color border #3C3836;
+
+* {
+  font-family: "Iosevka Aile", "JetBrains Mono", monospace;
+  font-size: 12px;
+  color: @foreground;
+}
+
+window#waybar {
+  background: @background;
+  border-bottom: 1px solid @border;
+}
+
+#workspaces button {
+  padding: 2px 8px;
+  margin: 4px 2px;
+  background: transparent;
+  color: @muted;
+  border-radius: 6px;
+}
+
+#workspaces button.active {
+  background: @surface;
+  color: @foreground;
+}
+
+#workspaces button.urgent {
+  background: @accent;
+  color: @background;
+}
+
+#clock,
+#pulseaudio,
+#network,
+#battery,
+#tray {
+  padding: 2px 10px;
+  margin: 4px 2px;
+  background: @surface;
+  border-radius: 6px;
+}

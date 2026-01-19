@@ -1,0 +1,8 @@
+configuration {
+  modi: "drun,run,window";
+  show-icons: true;
+  drun-display-format: "{name}";
+  font: "Iosevka Aile 12";
+}
+
+@theme "theme"
