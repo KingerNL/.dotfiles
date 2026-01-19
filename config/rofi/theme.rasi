@@ -9,7 +9,6 @@ window {
   background-color: @background;
   border: 1px;
   border-color: @accent;
-  font-family: "Overpass Mono";
 }
 
 mainbox {
@@ -41,6 +40,15 @@ element selected {
   text-color: @foreground;
   border: 1px;
   border-color: @accent;
+}
+
+element-text {
+  background-color: @background;
+  text-color: @foreground;
+}
+
+element-icon {
+  background-color: @background;
 }
 
 prompt {
