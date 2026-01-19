@@ -3,25 +3,45 @@
 @define-color accent #EC4935;
 @define-color surface #32302F;
 @define-color muted #A89984;
-@define-color border #3C3836;
 
 * {
-  font-family: "Overpass Mono", "Noto Color Emoji";
-  font-size: 13px;
-  font-weight: 700;
+  font-family: "Overpass Mono", "Noto Color Emoji", monospace;
+  font-size: 11px;
+  font-weight: bold;
+  min-height: 0;
   color: @foreground;
+}
+
+#left {
+  margin: 1px 0px 1px 2px;
+}
+
+#center {
+  margin: 1px 0px 1px 0px;
+}
+
+#right {
+  margin: 3px 4px 3px 0px;
+
+  border: 1px solid @accent;
+  border-radius: 0;
 }
 
 window#waybar {
   background: @background;
 }
 
+#workspaces {  
+  margin: 2px 2px;
+  border: 1px solid @accent;
+}
+
 #workspaces button {
-  padding: 2px 8px;
-  margin: 4px 2px;
+  margin: 2px 0px;
+  padding: 1px;
   background: transparent;
   color: @muted;
-  border-radius: 6px;
+  border-radius: 2px;
 }
 
 #workspaces button.active {
@@ -39,28 +59,18 @@ window#waybar {
 #battery,
 #tray {
   padding: 2px 10px;
-  margin: 4px 2px;
-  background: @surface;
-  border-radius: 6px;
+  margin: 2px 2px;
 }
 
-#group-right {
-  margin: 4px 2px;
-  padding: 2px;
-  border: 1px solid @accent;
-  border-radius: 0;
-}
 
 #clock {
-  margin: 4px 2px;
-  padding: 2px;
+  margin: 2px 2px;
   border: 1px solid @accent;
   border-radius: 0;
 }
 
 #bluetooth {
-  margin: 4px 2px;
-  padding: 2px;
+  margin: 2px 2px;
   border: 1px solid @accent;
   border-radius: 0;
 }

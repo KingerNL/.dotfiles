@@ -1,35 +1,40 @@
 {
-  "layer": "top",
-  "position": "top",
-  "height": 28,
-  "spacing": 8,
+	"layer": "top",
+	"position": "top",
+	"height": 28,
+	"spacing": 8,
 
-  "modules-left": ["hyprland/workspaces"],
+	"modules-left": ["group/left"],
 
-  "modules-center": ["group/center"],
 
-  "modules-right": ["group/right"],
+	"modules-center": ["group/center"],
 
-  "group/center": {
-    "orientation": "horizontal",
-    "modules": ["bluetooth", "clock"]
-  },
+	"modules-right": ["group/right"],
 
-  "group/right": {
- 	  "orientation": "horizontal",
- 	  "modules": ["pulseaudio", "network", "battery", "tray"]
-  },
+	"group/center": {
+		"orientation": "horizontal",
+		"modules": ["bluetooth", "clock"]
+	},
 
-  "clock": {
+	"group/left": {
+		"orientation": "horizontal",
+		"modules": ["hyprland/workspaces"]
+	},
+	"group/right": {
+		"orientation": "horizontal",
+		"modules": ["pulseaudio", "network", "battery"]
+	},
 
-	  "format": " {:%a %b %d  %H:%M} "
-  },
+	"clock": {
 
-  "battery": {
-	  "format": "{capacity}%"
-  },
+		"format": " {:%a %b %d  %H:%M} "
+	},
 
-  "bluetooth": {
+	"battery": {
+		"format": "{capacity}%"
+	},
+
+	"bluetooth": {
 	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
 	"format": "  {status} ",
 	"format-disabled": "", // an empty format will hide the module
@@ -38,5 +43,5 @@
 	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 	"on-click": "~/.config/waybar/scripts/rofi-bluetooth.sh"
-  }
+	}
 }
