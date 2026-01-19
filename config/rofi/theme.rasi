@@ -2,51 +2,53 @@
   background: #282828;
   foreground: #F1E8C2;
   accent: #EC4935;
-  surface: #32302F;
-  muted: #A89984;
 }
 
 window {
-  width: 42%;
-  border-radius: 10px;
+  width: 30%;
   background-color: @background;
-  border: 1px solid @accent;
+  border: 1px;
+  border-color: @accent;
+  font-family: "Overpass Mono";
 }
 
 mainbox {
   padding: 14px;
+  background-color: @background;
 }
 
 inputbar {
   padding: 8px 10px;
   margin: 0 0 10px 0;
-  background-color: @surface;
-  border-radius: 8px;
+  background-color: @background;
   text-color: @foreground;
 }
 
 listview {
   lines: 8;
   spacing: 6px;
-  background-color: transparent;
+  background-color: @background;
 }
 
 element {
   padding: 8px 10px;
-  border-radius: 8px;
-  background-color: transparent;
   text-color: @foreground;
+  background-color: @background;
 }
 
 element selected {
-  background-color: @accent;
-  text-color: #282828;
+  background-color: @background;
+  text-color: @foreground;
+  border: 1px;
+  border-color: @accent;
 }
 
 prompt {
-  text-color: @muted;
+  text-color: @foreground;
+  background-color: @background;
 }
 
 entry {
   text-color: @foreground;
+  background-color: @background;
 }

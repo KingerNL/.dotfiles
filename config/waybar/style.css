@@ -1,19 +1,19 @@
 @define-color background #282828;
-@define-color foreground #F1E8C2;
+@define-color foreground #BDAE93;
 @define-color accent #EC4935;
 @define-color surface #32302F;
 @define-color muted #A89984;
 @define-color border #3C3836;
 
 * {
-  font-family: "Iosevka Aile", "JetBrains Mono", monospace;
-  font-size: 12px;
+  font-family: "Overpass Mono", "Noto Color Emoji";
+  font-size: 13px;
+  font-weight: 700;
   color: @foreground;
 }
 
 window#waybar {
   background: @background;
-  border-bottom: 1px solid @border;
 }
 
 #workspaces button {
@@ -34,7 +34,6 @@ window#waybar {
   color: @background;
 }
 
-#clock,
 #pulseaudio,
 #network,
 #battery,
@@ -43,4 +42,25 @@ window#waybar {
   margin: 4px 2px;
   background: @surface;
   border-radius: 6px;
+}
+
+#group-right {
+  margin: 4px 2px;
+  padding: 2px;
+  border: 1px solid @accent;
+  border-radius: 0;
+}
+
+#clock {
+  margin: 4px 2px;
+  padding: 2px;
+  border: 1px solid @accent;
+  border-radius: 0;
+}
+
+#bluetooth {
+  margin: 4px 2px;
+  padding: 2px;
+  border: 1px solid @accent;
+  border-radius: 0;
 }

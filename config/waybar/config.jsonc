@@ -1,0 +1,42 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+  "spacing": 8,
+
+  "modules-left": ["hyprland/workspaces"],
+
+  "modules-center": ["group/center"],
+
+  "modules-right": ["group/right"],
+
+  "group/center": {
+    "orientation": "horizontal",
+    "modules": ["bluetooth", "clock"]
+  },
+
+  "group/right": {
+ 	  "orientation": "horizontal",
+ 	  "modules": ["pulseaudio", "network", "battery", "tray"]
+  },
+
+  "clock": {
+
+	  "format": " {:%a %b %d  %H:%M} "
+  },
+
+  "battery": {
+	  "format": "{capacity}%"
+  },
+
+  "bluetooth": {
+	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+	"format": "  {status} ",
+	"format-disabled": "", // an empty format will hide the module
+	"format-connected": " {num_connections} connected",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"on-click": "~/.config/waybar/scripts/rofi-bluetooth.sh"
+  }
+}
