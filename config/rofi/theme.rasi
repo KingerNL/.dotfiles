@@ -1,5 +1,6 @@
 * {
   background: #282828;
+	background-light: #675E55;
   foreground: #F1E8C2;
   accent: #EC4935;
 }
@@ -12,15 +13,20 @@ window {
 }
 
 mainbox {
-  padding: 14px;
+  padding: 0px;
   background-color: @background;
 }
 
 inputbar {
-  padding: 8px 10px;
-  margin: 0 0 10px 0;
+  margin: 8px 2px 5px 10px;
   background-color: @background;
   text-color: @foreground;
+}
+
+prompt {
+  enabled: false;
+  text-color: @foreground;
+  background-color: @background;
 }
 
 listview {
@@ -35,13 +41,6 @@ element {
   background-color: @background;
 }
 
-element selected {
-  background-color: @background;
-  text-color: @foreground;
-  border: 1px;
-  border-color: @accent;
-}
-
 element-text {
   background-color: @background;
   text-color: @foreground;
@@ -51,12 +50,31 @@ element-icon {
   background-color: @background;
 }
 
-prompt {
+element selected {
+  background-color: @background-light;
   text-color: @foreground;
-  background-color: @background;
+  border: 1px 0px 1px 0px;
+  border-color: @accent;
+}
+
+element-text selected {
+  background-color: @background-light;
+}
+
+element-icon selected {
+  background-color: @background-light;
+}
+
+
+textbox-prompt-colon {
+  enabled: false;
+}
+case-indicator {
+  enabled: false;
 }
 
 entry {
+	width: 100%;
   text-color: @foreground;
   background-color: @background;
 }
