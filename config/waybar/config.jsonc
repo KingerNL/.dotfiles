@@ -1,7 +1,7 @@
 {
 	"layer": "top",
 	"position": "top",
-	"height": 28,
+	"height": 31,
 	"spacing": 8,
 
 	"modules-left": ["group/left"],
@@ -13,7 +13,7 @@
 
 	"group/center": {
 		"orientation": "horizontal",
-		"modules": ["bluetooth", "clock"]
+		"modules": ["bluetooth", "clock", "custom/weather"]
 	},
 
 	"group/left": {
@@ -22,21 +22,50 @@
 	},
 	"group/right": {
 		"orientation": "horizontal",
-		"modules": ["pulseaudio", "network", "battery"]
+		"modules": ["custom/vpn", "pulseaudio", "network", "battery", "custom/power"]
+	},
+
+	"pulseaudio": {
+		"format": " 󰥛 {volume}%"
+	},
+
+	"network": {
+		"format": "  {essid}: {signalStrength}%"
 	},
 
 	"clock": {
-
-		"format": " {:%a %b %d  %H:%M} "
+		"format": "  {:%H:%M}  ",
+		"format-alt": "  {:%d %b %Y %H:%M:%S}  ",
+		"interval": 1
 	},
 
 	"battery": {
-		"format": "{capacity}%"
+		"format": " {capacity}%"
+	},
+
+	"custom/power": {
+		"exec": "echo ",
+		"format": " {}  ",
+		"on-click": "~/.config/waybar/scripts/rofi-power.sh"
+	},
+
+	"custom/vpn": {
+		"interval": 3600,
+		"exec": "sh -c \"nordvpn status | awk -F': ' '/^Status:/ {s=\\$2} /^Country:/ {c=\\$2} /^City:/ {y=\\$2} END {if (s==\\\"Disconnected\\\") print \\\"Disconnected\\\"; else print c \\\", \\\" y}'\"",
+		"format": " 󰚌 {} ",
+		"on-click": "~/.config/waybar/scripts/rofi-vpn.sh",
+		"tooltip": false
+	},
+
+	"custom/weather": {
+		"exec": "curl -s 'https://wttr.in/?format=%20%c%t%20'",
+		"interval": 100,
+		"format": " {} "
 	},
 
 	"bluetooth": {
 	// "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-	"format": "  {status} ",
+	"format": "  {status}  ",
 	"format-disabled": "", // an empty format will hide the module
 	"format-connected": " {num_connections} connected",
 	"tooltip-format": "{controller_alias}\t{controller_address}",
