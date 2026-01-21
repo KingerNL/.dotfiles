@@ -1,8 +1,7 @@
 {
-	"layer": "top",
-	"position": "top",
-	"height": 31,
-	"spacing": 8,
+  "layer": "top",
+  "position": "top",
+  "height": 33,
 
 	"modules-left": ["group/left"],
 
@@ -26,16 +25,19 @@
 	},
 
 	"pulseaudio": {
-		"format": " 󰥛 {volume}%"
+		"format": " 󰥛 {volume}%",
+		"tooltip": false
 	},
 
 	"network": {
-		"format": "  {essid}: {signalStrength}%"
+		"format": "  {essid}: {signalStrength}%",
+		"on-click": "~/.config/waybar/scripts/rofi-network.sh"
 	},
 
 	"clock": {
 		"format": "  {:%H:%M}  ",
 		"format-alt": "  {:%d %b %Y %H:%M:%S}  ",
+		"tooltip": false,
 		"interval": 1
 	},
 
@@ -46,6 +48,7 @@
 	"custom/power": {
 		"exec": "echo ",
 		"format": " {}  ",
+		"tooltip": false,
 		"on-click": "~/.config/waybar/scripts/rofi-power.sh"
 	},
 
@@ -59,6 +62,7 @@
 
 	"custom/weather": {
 		"exec": "curl -s 'https://wttr.in/?format=%20%c%t%20'",
+		"tooltip": false,
 		"interval": 100,
 		"format": " {} "
 	},
