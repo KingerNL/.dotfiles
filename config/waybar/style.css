@@ -79,6 +79,8 @@ window#waybar {
   margin: 2px 2px;
 }
 
+#custom-cava,
+#mpris,
 #bluetooth,
 #custom-weather,
 #clock {
@@ -94,3 +96,4 @@ window#waybar {
 #bluetooth:hover {
 	color: @accent;
 }
+
