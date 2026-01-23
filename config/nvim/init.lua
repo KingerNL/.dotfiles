@@ -4,8 +4,8 @@ vim.cmd('colorscheme gruvbox-material')
 
 -- Core configs
 require('core.options')        -- Sets editor options (line numbers, tabs, etc.)
-require('core.keymaps')        -- Defines custom keybindings
 require('core.plugins')        -- Lists and installs plugins via packer.nvim
+require('core.keymaps')        -- Defines custom keybindings
 
 -- Plugin setups
 require('plugins.alpha')       -- Startup dashboard 
@@ -21,5 +21,7 @@ require("plugins.autopairs")   -- Automatically close brackets/quotes
 require("plugins.nvim-tree")   -- File explorer panel on the left 
 require("plugins.which-key")   -- Shows available keybindings in a popup 
 require('plugins.treesitter')  -- Better syntax highlighting and code parsing
+require('plugins.blink')			 -- fast completion
+
 
 

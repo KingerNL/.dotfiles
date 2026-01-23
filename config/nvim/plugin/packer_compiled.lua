@@ -84,6 +84,12 @@ _G.packer_plugins = {
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/alpha-nvim",
     url = "https://github.com/goolord/alpha-nvim"
   },
+  ["blink.cmp"] = {
+    config = { "\27LJ\2\n€\2\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\0025\3\f\0005\4\r\0=\4\14\3=\3\15\2B\0\2\1K\0\1\0\nfuzzy\22prebuilt_binaries\1\0\1\rdownload\1\1\0\2\19implementation\trust\22prebuilt_binaries\0\15completion\18documentation\1\0\1\18documentation\0\1\0\1\14auto_show\1\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\4\15completion\0\15appearance\0\nfuzzy\0\vkeymap\0\1\0\1\vpreset\fdefault\nsetup\14blink.cmp\frequire\0" },
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/blink.cmp",
+    url = "https://github.com/saghen/blink.cmp"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -93,6 +99,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/dropbar.nvim",
     url = "https://github.com/Bekaboo/dropbar.nvim"
+  },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
@@ -154,6 +165,16 @@ _G.packer_plugins = {
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/murt/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
   ["todo-comments.nvim"] = {
     loaded = true,
     path = "/home/murt/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
@@ -177,6 +198,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: blink.cmp
+time([[Config for blink.cmp]], true)
+try_loadstring("\27LJ\2\n€\2\0\0\5\0\16\0\0196\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\3=\3\v\0025\3\f\0005\4\r\0=\4\14\3=\3\15\2B\0\2\1K\0\1\0\nfuzzy\22prebuilt_binaries\1\0\1\rdownload\1\1\0\2\19implementation\trust\22prebuilt_binaries\0\15completion\18documentation\1\0\1\18documentation\0\1\0\1\14auto_show\1\15appearance\1\0\1\22nerd_font_variant\tmono\vkeymap\1\0\4\15completion\0\15appearance\0\nfuzzy\0\vkeymap\0\1\0\1\vpreset\fdefault\nsetup\14blink.cmp\frequire\0", "config", "blink.cmp")
+time([[Config for blink.cmp]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

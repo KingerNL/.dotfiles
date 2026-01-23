@@ -39,3 +39,9 @@ vim.keymap.set("n", "t", function()
     vim.cmd("NvimTreeFocus")
   end
 end, { silent = true })
+
+-- Telescope
+vim.keymap.set("n", "<leader>ff", function()
+  require("telescope.builtin").find_files()
+end, { desc = "Telescope find files" })
+
