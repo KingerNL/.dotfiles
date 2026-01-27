@@ -1,6 +1,7 @@
 @define-color background #282828;
 @define-color foreground #BDAE93;
 @define-color accent #EC4935;
+/* @define-color accent #008200;  Heineken green*/ 
 @define-color surface #32302F;
 @define-color muted #A89984;
 
