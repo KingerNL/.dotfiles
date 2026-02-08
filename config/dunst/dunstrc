@@ -1,0 +1,34 @@
+[global]
+	separator_color= frame
+
+	### Add these font settings ###
+	font = Overpass Mono 8
+	line_height = 0
+	markup = full
+	format = "<b>%s</b>\n%b"
+	alignment = left
+	vertical_alignment = center
+	ellipsize = middle
+	ignore_newline = no
+	show_age_threshold = 60
+	frame_width = 1
+	progress_bar = false
+
+[urgency_low]
+	background = "#1d2021"
+	foreground = "#d4be98"
+	frame_color = "#7daea3"
+	timeout = 10  # Add this if you want timeout for low urgency
+
+[urgency_normal]
+	background = "#1d2021"
+	foreground = "#d4be98"
+	frame_color = "#EC4935"
+	timeout = 10  # Add this if you want timeout for normal urgency
+
+[urgency_critical]
+	background = "#EC4935"
+	foreground = "#282828"
+	frame_color = "#282828"
+	timeout = 0  # Critical notifications won't auto-close
+

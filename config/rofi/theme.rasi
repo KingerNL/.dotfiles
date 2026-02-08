@@ -1,8 +1,9 @@
 * {
-  background: #282828;
+  background: rgba(40, 40, 40, 0.85);
 	background-light: #675E55;
   foreground: #F1E8C2;
-  accent: #EC4935;
+  accent: #D65D0E;
+  font: "Overpass 12";
 }
 
 window {
@@ -14,55 +15,63 @@ window {
 
 mainbox {
   padding: 0px;
-  background-color: @background;
+  background-color: transparent;
 }
 
 inputbar {
-  margin: 8px 2px 5px 10px;
-  background-color: @background;
+  margin: 20px 20px 10px 20px;
+  background-color: transparent;
   text-color: @foreground;
+  border: 0px 0px 1px 0px;      /* bottom border only */
+  border-color: @accent;
 }
 
 prompt {
   enabled: false;
   text-color: @foreground;
-  background-color: @background;
+  background-color: transparent;
 }
 
 listview {
   lines: 8;
   spacing: 6px;
-  background-color: @background;
+  background-color: transparent;
+  padding: 0px 20px;
 }
 
 element {
   padding: 8px 10px;
   text-color: @foreground;
-  background-color: @background;
+  background-color: transparent;
+}
+
+
+element-description {
+  text-color: @background-light; /* a muted color */
+  font: "Overpass 6";
 }
 
 element-text {
-  background-color: @background;
+  background-color: transparent;
   text-color: @foreground;
 }
 
 element-icon {
-  background-color: @background;
+  background-color: transparent;
+	size: 1.2em;  /* Adjust the size as needed */
 }
 
 element selected {
-  background-color: @background-light;
-  text-color: @foreground;
-  border: 1px 0px 1px 0px;
-  border-color: @accent;
+  background-color: @accent;
 }
 
 element-text selected {
-  background-color: @background-light;
+  background-color: @accent;
+  text-color: #282828;
 }
 
 element-icon selected {
-  background-color: @background-light;
+  background-color: @accent;
 }
 
 

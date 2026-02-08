@@ -1,30 +1,28 @@
-#! /bin/bash
+#!/bin/bash
 
-bar="▁▂▃▄▅▆▇█"
+# Enable error handling and pipefail
+set -euo pipefail
+
+# Trap to clean up processes when the script exits
+trap 'pkill cava; exit' EXIT
+
+bar="▁▂▃▅▆▇"
 dict="s/;//g;"
 
-# creating "dictionary" to replace char with bar
+# Create "dictionary" to replace char with bar
 i=0
 while [ $i -lt ${#bar} ]
 do
     dict="${dict}s/$i/${bar:$i:1}/g;"
-    i=$((i=i+1))
+    i=$((i + 1))
 done
 
-# write cava config
-config_file="/tmp/polybar_cava_config"
-echo "
-[general]
-bars = 10
+# Write cava config
+config_file="/home/murt/.config/waybar/scripts/cava_config.conf"
 
-[output]
-method = raw
-raw_target = /dev/stdout
-data_format = ascii
-ascii_max_range = 7
-" > $config_file
-
-# read stdout from cava
-cava -p $config_file | while read -r line; do
-    echo $line | sed $dict
+# Run cava and process the output
+cava -p $config_file | while IFS= read -r line; do
+    # Process each line using sed and handle the output
+    echo "$line" | sed "$dict"
 done
+

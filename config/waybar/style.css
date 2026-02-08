@@ -48,12 +48,15 @@ tooltip label {
 }
 
 window#waybar {
-  background: @background;
+  background: transparent;
 }
 
 #workspaces {  
+  font-family: "Overpass Mono";
   margin: 2px 2px;
   border: 1px solid @accent;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
 #workspaces button {
@@ -61,6 +64,15 @@ window#waybar {
   padding: 1px;
   background: transparent;
   border-radius: 2px;
+  border: none;
+}
+
+#workspaces button:hover {
+  box-shadow: none; /* Remove predefined box-shadow */
+  text-shadow: none; /* Remove predefined text-shadow */
+  background: none; /* Remove predefined background color (white) */
+  transition: none; /* Disable predefined animations */
+  border-color: transparent;
 }
 
 #workspaces button.active {
@@ -80,10 +92,26 @@ window#waybar {
   margin: 2px 2px;
 }
 
+#custom-cava {
+  font-family: "Fira Code", "DejaVu Sans Mono", "Overpass", "Noto Color Emoji", monospace;
+	color: @accent;
+}
+
+#custom-github-commits {
+  padding-top: 3px;
+	padding-left: 7px;
+  min-height: 0;
+}
+
+#custom-weather {
+	font-family: "Overpass Mono", "Noto Color Emoji", monospace;
+}
+
 #custom-cava,
 #mpris,
 #bluetooth,
 #custom-weather,
+#custom-github-commits,
 #clock {
   margin: 2px 2px;
   border: 1px solid @accent;

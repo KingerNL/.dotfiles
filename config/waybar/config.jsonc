@@ -1,7 +1,7 @@
 {
-  "layer": "top",
-  "position": "top",
-  "height": 33,
+	"layer": "top",
+	"position": "top",
+	"height": 33,
 
 	"modules-left": ["group/left"],
 
@@ -23,13 +23,32 @@
 		"modules": [
 			"hyprland/workspaces", 
 			"mpris",
-			"custom/cava"
+			// "custom/cava",
+			"custom/github-commits"
 		]
 	},
+
 	"group/right": {
 		"orientation": "horizontal",
 		"modules": ["custom/vpn", "pulseaudio", "network", "battery", "custom/power"]
 	},
+
+	"hyprland/workspaces": {
+		"format": "{windows}",
+		"window-rewrite-default": " 󰨕 ",
+		"window-rewrite": {
+			"title<.*youtube.*>": "  ", 
+			"title<.*openai.*>": " 󱠃 ", 
+			"class<zen>": "  ", 
+			"class<zen> title<.*github.*>": "  ", 
+			"kitty": "  ", 
+			"title<.*nvim.*>": " 󰘬 ",
+			"spotify": "  ",
+			"signal": "  ",
+			"steam": "  "
+		}
+	},
+
 
 	"pulseaudio": {
 		"format": " 󰥛 {volume}%",
@@ -68,7 +87,7 @@
 	},
 
 	"custom/weather": {
-		"exec": "curl -s 'https://wttr.in/?format=%20%c%t%20'",
+		"exec": "curl 'https://wttr.in/?format=1'",
 		"tooltip": false,
 		"interval": 100,
 		"format": " {} "
@@ -81,37 +100,46 @@
 		"return-type": "text"
 	},
 
-  "mpris": {
-    "format": " {player_icon}  {dynamic} ",
-    "format-paused": " {status_icon} {dynamic} ",
-    "format-stopped": "",
-    "ignore-list": ["vesktop"],
-    "player-icons": {
-      "brave": "",
-      "default": "",
-      "spotify": "",
-      "vlc": "",
-      "mpv": ""
-    },
-    "status-icons": {
-      "paused": "",
-      "playing": "⏸"
-    },
+	"mpris": {
+		"format": " {player_icon}  {dynamic} ",
+		"format-paused": " {status_icon} {dynamic} ",
+		"format-stopped": "",
+		"ignore-list": ["vesktop"],
+		"player-icons": {
+			"brave": "",
+			"default": "",
+			"spotify": "",
+			"vlc": "",
+			"mpv": ""
+		},
+		"status-icons": {
+			"paused": "",
+			"playing": "⏸"
+		},
 		"interval": 1,
 		"dynamic-order":  ["artist", "title", "position", "length"] ,
 		"album-len": 0,
 		"title-len": 20,
-    "max-length": 40,
-    "tooltip": true
-  },
+		"max-length": 40,
+		"tooltip": true
+	},
+
+	"custom/github-commits": {
+		"format": "{}",
+		"return-type": "json",
+		"exec": "~/.config/waybar/scripts/github-commits.sh",
+		"on-click": "zen-browser github.com/KingerNL",
+		"interval": 660,
+		"tooltip": false
+	},
 
 	"bluetooth": {
-	"format": "  {status}  ",
-	"format-disabled": "", // an empty format will hide the module
-	"format-connected": "  {num_connections} connected  ",
-	"tooltip-format": " {controller_alias}\t{controller_address} ",
-	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	"on-click": "~/.config/waybar/scripts/rofi-bluetooth.sh"
+		"format": "  {status}  ",
+		"format-disabled": "", // an empty format will hide the module
+		"format-connected": "  {num_connections} connected  ",
+		"tooltip-format": " {controller_alias}\t{controller_address} ",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"on-click": "~/.config/waybar/scripts/rofi-bluetooth.sh"
 	}
 }
