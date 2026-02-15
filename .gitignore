@@ -1,0 +1,6 @@
+
+# secrets / tokens
+config/waybar/scripts/token.txt
+
+# vesktop session data (contains tokens/session)
+config/vesktop/sessionData/
