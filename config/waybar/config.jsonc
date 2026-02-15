@@ -22,8 +22,8 @@
 		"orientation": "horizontal",
 		"modules": [
 			"hyprland/workspaces", 
-			"mpris",
-			// "custom/cava",
+			// "mpris",
+			"custom/cava",
 			"custom/github-commits"
 		]
 	},
@@ -45,7 +45,8 @@
 			"title<.*nvim.*>": " 󰘬 ",
 			"spotify": "  ",
 			"signal": "  ",
-			"steam": "  "
+			"steam": "  ",
+			"discord": " 󰙯 "
 		}
 	},
 
@@ -72,7 +73,7 @@
 	},
 
 	"custom/power": {
-		"exec": "echo ",
+		"exec": "echo ",
 		"format": " {}  ",
 		"tooltip": false,
 		"on-click": "~/.config/waybar/scripts/rofi-power.sh"
@@ -87,7 +88,7 @@
 	},
 
 	"custom/weather": {
-		"exec": "curl 'https://wttr.in/?format=1'",
+  "exec": "curl -s 'wttr.in/?format=1' | sed 's/ \\{2,\\}/ /g'",
 		"tooltip": false,
 		"interval": 100,
 		"format": " {} "
@@ -95,9 +96,12 @@
 
 	"custom/cava": {
 		"exec": "~/.config/waybar/scripts/cava-rendering.sh",
+		"restart-interval": 2,
+		"tooltip": false,
 		"tail": true,
 		"format": " {} ",
-		"return-type": "text"
+		"return-type": "text",
+		"on-click": "playerctl play-pause"
 	},
 
 	"mpris": {
@@ -106,8 +110,7 @@
 		"format-stopped": "",
 		"ignore-list": ["vesktop"],
 		"player-icons": {
-			"brave": "",
-			"default": "",
+			"default": "󰎇",
 			"spotify": "",
 			"vlc": "",
 			"mpv": ""

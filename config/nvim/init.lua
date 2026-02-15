@@ -22,6 +22,5 @@ require("plugins.nvim-tree")   -- File explorer panel on the left
 require("plugins.which-key")   -- Shows available keybindings in a popup 
 require('plugins.treesitter')  -- Better syntax highlighting and code parsing
 require('plugins.blink')			 -- fast completion
-
-
+require("colorizer").setup()	 -- color active
 

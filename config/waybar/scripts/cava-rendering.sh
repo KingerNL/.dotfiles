@@ -1,28 +1,31 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -u
 
-# Enable error handling and pipefail
-set -euo pipefail
+CONFIG_FILE="$HOME/.config/waybar/scripts/cava_config.conf"
 
-# Trap to clean up processes when the script exits
-trap 'pkill cava; exit' EXIT
-
-bar="▁▂▃▅▆▇"
-dict="s/;//g;"
-
-# Create "dictionary" to replace char with bar
-i=0
-while [ $i -lt ${#bar} ]
-do
-    dict="${dict}s/$i/${bar:$i:1}/g;"
-    i=$((i + 1))
+bars="▁▂▃▅▆▇"
+dict='s/;//g;'
+for ((i=0; i<${#bars}; i++)); do
+  dict+="s/$i/${bars:i:1}/g;"
 done
 
-# Write cava config
-config_file="/home/murt/.config/waybar/scripts/cava_config.conf"
+wait_for_audio() {
+  # pipewire-pulse exposes pactl; this becomes ready slightly after login sometimes
+  for _ in {1..80}; do
+    if command -v pactl >/dev/null 2>&1 && pactl info >/dev/null 2>&1; then
+      return 0
+    fi
+    sleep 0.25
+  done
+  return 1
+}
 
-# Run cava and process the output
-cava -p $config_file | while IFS= read -r line; do
-    # Process each line using sed and handle the output
-    echo "$line" | sed "$dict"
+# Don’t die if audio isn’t ready yet
+wait_for_audio || true
+
+# Keep trying forever; if cava crashes early, restart it.
+while true; do
+  /usr/bin/cava -p "$CONFIG_FILE" 2>/tmp/waybar-cava.err | sed -u "$dict"
+  sleep 1
 done
 

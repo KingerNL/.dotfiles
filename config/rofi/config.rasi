@@ -1,8 +1,123 @@
+
+/*****----- Configuration -----*****/
 configuration {
-  modi: "drun,run,window";
-  show-icons: true;
-  drun-display-format: "{name}";
-  font: "Iosevka Aile 12";
+	modi:                       "drun";
+	show-icons:                 true;
+	display-drun:               "";
+	display-run:                "";
+	display-filebrowser:        "";
+	display-window:             "";
+	drun-display-format:        "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+	window-format:              "{w} · {c} · {t}";
 }
 
-@theme "theme"
+* {
+	border-colour: green;
+  background: rgba(40, 40, 40, 1);
+	background-light: #675E55;
+  foreground: #F1E8C2;
+  accent: #EC4935;
+  font: "Overpass 12";
+}
+
+window {
+  width: 30%;
+  background-color: @background;
+  border: 1px;
+  border-color: @accent;
+}
+mainbox {
+  padding: 0px;
+  background-color: transparent;
+}
+
+inputbar {
+  margin: 20px 20px 10px 20px;
+  background-color: transparent;
+  text-color: @foreground;
+  border: 0px 0px 1px 0px;      /* bottom border only */
+  border-color: @accent;
+}
+num-filtered-rows {
+    enabled: false;
+}
+num-total-rows {
+    enabled: false;
+}
+textbox-num-sep {
+    enabled: false;
+}
+num-rows {
+	enabled: false;
+}
+textbox-prompt-colon {
+  enabled: false;
+}
+case-indicator {
+  enabled: false;
+}
+prompt {
+  enabled: false;
+}
+listview {
+	border: 0px;
+  lines: 10;
+  spacing: 6px;
+  background-color: transparent;
+	scrollbar:                   false;
+  padding: 10px 20px;
+}
+
+element {
+    enabled:                     true;
+    spacing:                     10px;
+    margin:                      0px;
+    padding:                     5px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @accent;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+element alternate.normal {
+	background-color:            transparent;
+	text-color:                  @foreground;
+}
+element selected.normal {
+    background-color:            #32302F;
+    text-color:                  @accent;
+}
+element-icon {
+    background-color:            transparent;
+    text-color:                  inherit;
+    size:                        24px;
+    cursor:                      inherit;
+}
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    highlight:                   inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+entry {
+	width: 100%;
+  text-color: @foreground;
+  background-color: @background;
+}
+
+scrollbar {
+	enabled: false;
+	handle-width:                1px ;
+	handle-color:                @accent;
+	border-radius:               0px;
+	background-color:            transparent;
+}

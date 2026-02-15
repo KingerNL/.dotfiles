@@ -1,0 +1,11 @@
+[Unit]
+Description=Battery notifications
+
+[Service]
+Type=simple
+ExecStart=%h/.local/bin/bat-signal
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
