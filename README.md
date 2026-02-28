@@ -1,4 +1,4 @@
-# Gruvbox: retro-orange, an Hyprland config setup
+# Retro-Orange, an Gruvbox themed Hyprland setup
 
 ![impression_picture1](./misc/impression-1.png)
 ![impression_picture2](./misc/impression-2.png)
@@ -10,7 +10,7 @@ You really only need the dotfiles required, if you have Hyprland:
 
 ```sh
 # Clone desktop environment and checkout arch branch
-git clone https://github.com/KingerNL/.dotfiles -b arch
+git clone https://github.com/KingerNL/.dotfiles
 
 # change into dotfiles directory
 cd .dotfiles
