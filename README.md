@@ -1,7 +1,7 @@
 # Gruvbox: retro-orange, an Hyprland config setup
 
-![impression_picture1]("./misc/impression-1.png")
-![impression_picture2]("./misc/impression-2.png")
+![impression_picture1]("/misc/impression-1.png")
+![impression_picture2]("/misc/impression-2.png")
 
 
 # Running the Desktop
