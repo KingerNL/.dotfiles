@@ -1,35 +1,20 @@
-# 🧠 Murt's Dotfiles — Neovim + Zsh + Starship + Tilix Dev Environment
+# Gruvbox: retro-orange, an Hyprland config setup
 
-Welcome to my personal dev environment setup!  
-This repository contains all the key configuration files I use to create a powerful and portable terminal-based coding experience on Ubuntu 24.04.
+![impression_picture1]("./misc/impression-1.png")
+![impression_picture2]("./misc/impression-2.png")
 
----
 
-## 🧰 What’s Included
+# Running the Desktop
 
-- **Neovim 0.11+** with:
-  - `coc.nvim` (LSP, autocomplete)
-  - `copilot.vim` (AI completions)
-  - `nvim-tree` (file explorer)
-  - `dropbar.nvim` (breadcrumb navigation)
-  - `treesitter` (syntax-aware highlighting)
-  - Gruvbox theme + icons
-- **ZSH** with:
-  - Oh My Zsh
-  - Starship prompt
-  - Autocompletion and syntax highlighting
-- **Tilix** terminal configuration
+You really only need the dotfiles required, if you have Hyprland:
 
----
+```sh
+# Clone desktop environment and checkout arch branch
+git clone https://github.com/KingerNL/.dotfiles -b arch
 
-## 🚀 Quickstart (New Machine Setup)
+# change into dotfiles directory
+cd .dotfiles
 
-### 1. Clone this repository
-
-```bash
-git clone https://github.com/KingerNL/.dotfiles
-cd ~/.dotfiles
-./bootstrap.sh
+# copy config files
+cp -r config ../.config
 ```
-
-Don't run sudo ./bootstrap.sh, it will not work.

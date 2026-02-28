@@ -36,7 +36,6 @@ return require('packer').startup(function(use)
 	use 'folke/noice.nvim'                       -- Better UI for messages, cmdline, and LSP
 	use 'karb94/neoscroll.nvim'                  -- Smooth scrolling animations
 	use {'akinsho/bufferline.nvim', tag = '*'}   -- Tab-like buffer management bar
-	use 'numToStr/Comment.nvim'                  -- Toggle comments with keybinds
 	use 'gelguy/wilder.nvim'                     -- Enhanced command-line autocomplete UI
 	use 'nvim-lualine/lualine.nvim'              -- Statusline with mode, git, diagnostics, etc.
 	use 'lewis6991/gitsigns.nvim'                -- Git change indicators in the gutter (add, modify, delete)
@@ -54,6 +53,14 @@ return require('packer').startup(function(use)
 		"nvim-telescope/telescope.nvim",
 		requires = { "nvim-lua/plenary.nvim" },
 	}
+
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+
 
 	-- Only sync if this is a fresh install
 	if packer_bootstrap then

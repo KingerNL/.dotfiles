@@ -38,6 +38,7 @@
 		"window-rewrite-default": " 󰨕 ",
 		"window-rewrite": {
 			"title<.*youtube.*>": "  ", 
+			"class<zen> title<calendar.notion.so>": "  ",
 			"title<.*openai.*>": " 󱠃 ", 
 			"class<zen>": "  ", 
 			"class<zen> title<.*github.*>": "  ", 
