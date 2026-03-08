@@ -14,7 +14,7 @@ This guide assumes a fresh Arch Linux install. Everything is organized into **la
 ```sh
 # Install base packages
 sudo pacman -S --needed \
-  hyprland waybar rofi dunst kitty starship systemd \
+  hyprland sddm waybar rofi dunst kitty starship systemd \
   git grim wl-clipboard playerctl bluez bluez-utils \
   networkmanager pipewire pipewire-pulse wireplumber \
   nerd-fonts
@@ -72,6 +72,17 @@ tar -xf cursor_theme/Simp1e-Gruvbox-Dark.tar.xz -C ~/.local/share/icons/
 fc-cache -fv
 ```
 
+## Login Screen (SDDM)
+
+```sh
+# Copy custom theme files (replace <theme-name> with your theme)
+sudo cp -r config/sddm/* /usr/share/sddm/themes/<theme-name>/
+
+# Configure SDDM to use the theme
+echo "[Theme]
+Current=<theme-name>" | sudo tee /etc/sddm.conf
+```
+
 ---
 
 # Optional Programs
@@ -84,6 +95,7 @@ Not included in the install scripts - install manually if wanted:
 | Vesktop (Discord) | `yay -S vesktop` |
 | Spicetify | `yay -S spicetify-cli` |
 | Steam | `sudo pacman -S steam` |
+| Gqrx (SDR) | `yay -S gqrx gtk-4.0 kvantum` |
 
 ---
 

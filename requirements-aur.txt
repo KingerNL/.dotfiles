@@ -13,6 +13,11 @@ zen-browser
 vesktop
 nautilus
 
+# SDR (Software Defined Radio)
+gqrx
+gtk-4.0
+kvantum
+
 # Optional
 # steam
 # spicetify-cli

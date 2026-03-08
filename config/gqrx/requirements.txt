@@ -1,0 +1,3 @@
+# gqrx SDR requirements
+# See requirements-aur.txt for package installation
+# Config files available in config/gqrx/ (on laptop)

@@ -3,6 +3,7 @@
 
 # Core
 hyprland
+sddm
 waybar
 rofi
 dunst
