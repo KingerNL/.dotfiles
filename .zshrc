@@ -43,7 +43,7 @@ add-zsh-hook -Uz preexec load-nvm
 
 fastfetch --kitty ~/Pictures/Wallpapers/spiderman.png --logo-width 55 --color "#F74B36"
 
-export PATH=$PATH:/home/murt/.spicetify
+export PATH=$PATH:$HOME/.spicetify
 
 # opencode
-export PATH=/home/murt/.opencode/bin:$PATH
+export PATH=$HOME/.opencode/bin:$PATH

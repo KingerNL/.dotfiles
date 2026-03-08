@@ -1,0 +1,6 @@
+# zsh requirements
+# Install with: sudo pacman -S $(cat requirements-zsh.txt | grep -v '^#' | grep -v '^$')
+
+zsh
+lsd
+fastfetch

@@ -1,0 +1,4 @@
+# kitty extras
+# Base package (kitty) is in requirements-base.txt
+
+ttf-caskaydia-cove-nerd

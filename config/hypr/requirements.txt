@@ -1,0 +1,8 @@
+# hyprland extras
+# Base packages (hyprland, waybar, rofi, kitty) are in requirements-base.txt
+
+hyprlock
+hyprpicker
+hyprshot
+satty
+swww-daemon

@@ -1,0 +1,18 @@
+# AUR packages - install with: yay -S $(cat requirements-aur.txt | grep -v '^#' | grep -v '^$')
+
+# Always needed
+yay
+
+# Shell/Theme
+zsh-autosuggestions
+zsh-syntax-highlighting
+ttf-caskaydia-cove-nerd
+
+# AUR apps
+zen-browser
+vesktop
+nautilus
+
+# Optional
+# steam
+# spicetify-cli

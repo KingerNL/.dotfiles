@@ -1,0 +1,6 @@
+# waybar extras
+# Base package (waybar) is in requirements-base.txt
+
+cava
+nordvpn
+curl

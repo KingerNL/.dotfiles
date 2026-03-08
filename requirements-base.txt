@@ -1,0 +1,32 @@
+# Base requirements - packages for Hyprland setup
+# Install with: sudo pacman -S $(cat requirements-base.txt | grep -v '^#' | grep -v '^$')
+
+# Core
+hyprland
+waybar
+rofi
+dunst
+kitty
+starship
+systemd
+zsh
+
+# Utilities
+grim
+wl-clipboard
+playerctl
+bluez
+bluez-utils
+networkmanager
+pipewire
+pipewire-pulse
+wireplumber
+lsd
+fastfetch
+bc
+jq
+libnotify
+wget
+
+# Fonts
+nerd-fonts

@@ -1,0 +1,7 @@
+# nvim build dependencies
+# Base package (neovim) is in requirements-base.txt
+
+git
+cargo
+nodejs
+npm
