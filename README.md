@@ -75,12 +75,12 @@ fc-cache -fv
 ## Login Screen (SDDM)
 
 ```sh
-# Copy custom theme files (replace <theme-name> with your theme)
-sudo cp -r config/sddm/* /usr/share/sddm/themes/<theme-name>/
+# Copy gruvbox-sddm theme files
+sudo cp -r config/sddm/* /usr/share/sddm/themes/gruvbox-sddm/
 
 # Configure SDDM to use the theme
 echo "[Theme]
-Current=<theme-name>" | sudo tee /etc/sddm.conf
+Current=gruvbox-sddm" | sudo tee /etc/sddm.conf
 ```
 
 ---
@@ -95,7 +95,7 @@ Not included in the install scripts - install manually if wanted:
 | Vesktop (Discord) | `yay -S vesktop` |
 | Spicetify | `yay -S spicetify-cli` |
 | Steam | `sudo pacman -S steam` |
-| Gqrx (SDR) | `yay -S gqrx gtk-4.0 kvantum` |
+| Gqrx (SDR) | `yay -S gqrx gtk-4.0 kvantum qt5ct` |
 
 ---
 

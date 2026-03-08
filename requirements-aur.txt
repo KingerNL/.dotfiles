@@ -17,6 +17,7 @@ nautilus
 gqrx
 gtk-4.0
 kvantum
+qt5ct
 
 # Optional
 # steam

@@ -1,0 +1,6 @@
+# Tag name          ;  color
+Untagged            ; #c0c0c0
+
+# Frequency ; Name                     ; Modulation          ;  Bandwidth; Tags
+    95598000; Galaxy NL                ; WFM (mono)          ;     136000; Untagged
+    97600000; Grand Pri Radio          ; WFM (mono)          ;     222000; Untagged

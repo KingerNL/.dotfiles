@@ -1,5 +1,5 @@
 # SDDM requirements
 # Base package (sddm) is in requirements-base.txt
 
-# Custom theme files (copy to /usr/share/sddm/themes/<theme-name>/)
+# Theme files (copy to /usr/share/sddm/themes/gruvbox-sddm/)
 # See README for installation instructions
