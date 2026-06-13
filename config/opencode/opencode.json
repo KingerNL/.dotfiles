@@ -1,0 +1,56 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openai/gpt-5.5",
+  "small_model": "openai/gpt-5.4-mini",
+  "instructions": ["~/.config/opencode/instructions.md"],
+  "permission": {
+    "read": "allow",
+    "list": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "edit": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "external_directory": "allow",
+    "bash": {
+      "*": "ask",
+      "ls*": "allow",
+      "pwd": "allow",
+      "tree*": "allow",
+      "find *": "allow",
+      "rg *": "allow",
+      "grep *": "allow",
+      "cat *": "allow",
+      "head *": "allow",
+      "tail *": "allow",
+      "sed -n *": "allow",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git branch*": "allow",
+
+      "npm test*": "ask",
+      "pnpm test*": "ask",
+      "pytest*": "ask",
+      "cargo test*": "ask",
+      "go test*": "ask",
+
+      "git add*": "ask",
+      "git commit*": "ask",
+      "git push*": "ask",
+
+      "rm *": "ask",
+      "rsync *": "ask",
+      "mv *": "ask",
+      "cp *": "ask",
+      "mkdir *": "ask",
+      "touch *": "ask",
+
+      "sudo *": "deny",
+      "git reset*": "deny",
+      "git clean*": "deny",
+      "chmod *": "ask",
+      "chown *": "deny"
+    }
+  }
+}
