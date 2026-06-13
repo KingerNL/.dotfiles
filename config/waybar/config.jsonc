@@ -14,7 +14,8 @@
 		"modules": [
 			"bluetooth", 
 			"clock", 
-			"custom/weather"
+			"custom/weather",
+			"custom/usb"
 		]
 	},
 
@@ -84,6 +85,13 @@
 		"format": " {}  ",
 		"tooltip": false,
 		"on-click": "~/.config/waybar/scripts/rofi-power.sh"
+	},
+
+	"custom/usb": {
+		"exec": "~/.config/waybar/scripts/usb-devices.sh",
+		"return-type": "json",
+		"interval": 1,
+		"format": " {}  "
 	},
 
 	"custom/vpn": {

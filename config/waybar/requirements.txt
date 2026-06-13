@@ -4,4 +4,6 @@
 cava
 nordvpn
 curl
+jq
 gcalcli
+usbutils

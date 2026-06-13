@@ -2,10 +2,13 @@
 # secrets / tokens
 config/waybar/scripts/token.txt
 config/waybar/notion-calendar.env
+config/waybar/*.env
 
 # generated caches
 config/waybar/scripts/__pycache__/
 *.pyc
+*.cache
+weekly_commits_cache.txt
 
 # vesktop session data (contains tokens/session)
 config/vesktop/sessionData/
