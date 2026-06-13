@@ -4,3 +4,4 @@
 cava
 nordvpn
 curl
+gcalcli

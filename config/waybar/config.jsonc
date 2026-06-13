@@ -24,7 +24,8 @@
 			"hyprland/workspaces", 
 			// "mpris",
 			"custom/cava",
-			"custom/github-commits"
+			"custom/github-commits",
+			"custom/gcal-calendar"
 		]
 	},
 
@@ -40,10 +41,15 @@
 			"title<.*youtube.*>": "  ", 
 			"class<zen> title<calendar.notion.so>": "  ",
 			"title<.*openai.*>": " 󱠃 ", 
-			"class<zen>": "  ", 
 			"class<zen> title<.*github.*>": "  ", 
-			"kitty": "  ", 
+			"class<zen>": "  ", 
 			"title<.*nvim.*>": " 󰘬 ",
+			"title<OC \\|.*>": "  ",
+			"class<org.kde.dolphin>": "  ",
+			"class<dolphin>": "  ",
+			"class<nautilus>": "  ",
+			"class<org.gnome.Nautilus>": "  ",
+			"kitty": "  ", 
 			"spotify": "  ",
 			"signal": "  ",
 			"steam": "  ",
@@ -135,6 +141,14 @@
 		"on-click": "zen-browser github.com/KingerNL",
 		"interval": 660,
 		"tooltip": false
+	},
+
+	"custom/gcal-calendar": {
+    "exec": "~/.config/waybar/scripts/gcal-next-event.py",
+    "format": " {} ",
+    "return-type": "json",
+    "interval": 300,
+    "tooltip": true
 	},
 
 	"bluetooth": {

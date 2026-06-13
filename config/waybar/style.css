@@ -1,6 +1,7 @@
 @define-color background #282828;
 @define-color foreground #BDAE93;
 @define-color accent #EC4935;
+@define-color separator #ab3e31;
 /* @define-color accent #008200;  Heineken green*/ 
 @define-color surface #32302F;
 @define-color muted #A89984;
@@ -52,36 +53,72 @@ window#waybar {
 }
 
 #workspaces {  
-  font-family: "Overpass Mono";
   margin: 2px 2px;
   border: 1px solid @accent;
-	padding-left: 3px;
-	padding-right: 3px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 #workspaces button {
-  margin: 2px 0px;
-  padding: 1px;
+  margin: 2px 0;
+  padding: 0 6px;
   background: transparent;
-  border-radius: 2px;
+  background-image: none;
+  border-radius: 0;
   border: none;
+  border-left: 1px solid @separator;
+  transition: none;
+  min-width: 0;
+}
+
+#workspaces button:first-child {
+  margin-left: 0;
+  border-left: none;
+}
+
+#workspaces button:last-child {
+  margin-right: 0;
+  border-right: none;
+}
+
+#workspaces button label {
+  font-family: "CaskaydiaCove Nerd Font", "Overpass", "Noto Color Emoji", sans-serif;
+  font-size: 12px;
+  margin: 0 0 0 -4px;
+  min-width: 0;
+  padding: 0;
 }
 
 #workspaces button:hover {
+  margin: 0;
   box-shadow: none; /* Remove predefined box-shadow */
   text-shadow: none; /* Remove predefined text-shadow */
-  background: none; /* Remove predefined background color (white) */
-  transition: none; /* Disable predefined animations */
-  border-color: transparent;
+  background: #504945;
+  background-image: none;
+  border-right-color: @separator;
+  transition: none;
 }
 
 #workspaces button.active {
+  margin: 0;
+  border-radius: 0;
   background: @surface;
+  border-right-color: @separator;
 }
 
 #workspaces button.urgent {
   background: @accent;
   color: @background;
+}
+
+#workspaces button.active + button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#workspaces button:hover + button {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 #pulseaudio,
@@ -107,10 +144,20 @@ window#waybar {
 	font-family: "Overpass Mono", "Noto Color Emoji", monospace;
 }
 
+#custom-gcal-calendar {
+  font-family: "Overpass", "CaskaydiaCove Nerd Font", "Noto Color Emoji", sans-serif;
+}
+
+#custom-power {
+  font-family: "CaskaydiaCove Nerd Font Mono", "Overpass Mono", "Noto Color Emoji", monospace;
+  font-size: 14px;
+}
+
 #custom-cava,
 #mpris,
 #bluetooth,
 #custom-weather,
+#custom-gcal-calendar,
 #custom-github-commits,
 #clock {
   margin: 2px 2px;
@@ -125,4 +172,3 @@ window#waybar {
 #bluetooth:hover {
 	color: @accent;
 }
-
