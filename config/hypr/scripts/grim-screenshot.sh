@@ -24,6 +24,7 @@ trap cleanup EXIT
 need hyprshot
 need satty
 need mkfifo
+need wl-copy
 
 ts="$(date '+%Y%m%d-%H%M%S')"
 out="$OUTDIR/satty-$ts.png"
@@ -32,7 +33,7 @@ FIFO_PATH="$RUNDIR/satty-$ts.fifo"
 mkfifo -- "$FIFO_PATH"
 
 # Start satty reading the image from stdin (the FIFO)
-satty --filename - --output-filename "$out" <"$FIFO_PATH" &
+satty --filename - --output-filename "$out" --floating-hack --copy-command wl-copy --actions-on-enter "save-to-clipboard" --actions-on-right-click "save-to-clipboard" --early-exit <"$FIFO_PATH" &
 SATYY_PID=$!
 
 # Capture (Esc cancels: hyprshot exits nonzero -> we quit cleanly)
@@ -70,4 +71,3 @@ while kill -0 "$SATYY_PID" 2>/dev/null; do
 done
 
 wait "$SATYY_PID" 2>/dev/null || true
-

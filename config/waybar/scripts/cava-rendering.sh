@@ -3,6 +3,12 @@ set -u
 
 CONFIG_FILE="$HOME/.config/waybar/scripts/cava_config.conf"
 
+cleanup() {
+  jobs -pr | xargs -r kill 2>/dev/null
+}
+trap 'cleanup; exit 0' INT TERM HUP PIPE
+trap cleanup EXIT
+
 bars="▁▂▃▅▆▇"
 dict='s/;//g;'
 for ((i=0; i<${#bars}; i++)); do
@@ -25,7 +31,7 @@ wait_for_audio || true
 
 # Keep trying forever; if cava crashes early, restart it.
 while true; do
-  /usr/bin/cava -p "$CONFIG_FILE" 2>/tmp/waybar-cava.err | sed -u "$dict"
+  /usr/bin/cava -p "$CONFIG_FILE" 2>/tmp/waybar-cava.err | sed -u "$dict" || exit 0
+  cleanup
   sleep 1
 done
-
