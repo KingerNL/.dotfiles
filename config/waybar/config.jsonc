@@ -15,7 +15,8 @@
 			"bluetooth", 
 			"clock", 
 			"custom/weather",
-			"custom/usb"
+			"custom/usb",
+			"custom/eww-background"
 		]
 	},
 
@@ -27,12 +28,13 @@
 			"custom/cava",
 			"custom/github-commits",
 			"custom/gcal-calendar"
+			// "image#album-art"
 		]
 	},
 
 	"group/right": {
 		"orientation": "horizontal",
-		"modules": ["custom/vpn", "pulseaudio", "network", "battery", "custom/power"]
+		"modules": ["custom/vpn", "pulseaudio", "custom/network", "custom/battery", "custom/power"]
 	},
 
 	"hyprland/workspaces": {
@@ -64,9 +66,14 @@
 		"tooltip": false
 	},
 
-	"network": {
-		"format": "  {essid}: {signalStrength}%",
-		"on-click": "~/.config/waybar/scripts/rofi-network.sh"
+	"custom/network": {
+		"exec": "~/.config/waybar/scripts/network-status.sh",
+		"format": "{}",
+		"return-type": "json",
+		"tooltip": true,
+		"interval": 2,
+		"on-click": "~/.config/waybar/scripts/rofi-network.sh",
+		"on-click-right": "~/.config/waybar/scripts/robot-eth.sh toggle"
 	},
 
 	"clock": {
@@ -76,8 +83,13 @@
 		"interval": 1
 	},
 
-	"battery": {
-		"format": " {capacity}%"
+	"custom/battery": {
+		"exec": "~/.config/waybar/scripts/battery-status.sh",
+		"return-type": "json",
+		"interval": 10,
+		"format": "{}",
+		"tooltip": true,
+		"escape": false
 	},
 
 	"custom/power": {
@@ -90,8 +102,18 @@
 	"custom/usb": {
 		"exec": "~/.config/waybar/scripts/usb-devices.sh",
 		"return-type": "json",
-		"interval": 1,
-		"format": " {}  "
+		"interval": 5,
+		"format": "{}"
+	},
+
+	"custom/eww-background": {
+		"exec": "~/.config/waybar/scripts/eww-background-toggle.sh status",
+		"return-type": "json",
+		"interval": 2,
+		"format": " {} ",
+		"tooltip": true,
+		"on-click": "~/.config/waybar/scripts/eww-background-toggle.sh toggle",
+		"on-click-right": "~/.config/waybar/scripts/eww-background-toggle.sh reload"
 	},
 
 	"custom/vpn": {
@@ -107,6 +129,14 @@
 		"tooltip": false,
 		"interval": 100,
 		"format": " {} "
+	},
+
+	"custom/gcal-calendar": {
+    "exec": "~/.config/waybar/scripts/gcal-next-event.py",
+    "format": " {} ",
+    "return-type": "json",
+    "interval": 300,
+    "tooltip": true
 	},
 
 	"custom/cava": {
@@ -151,14 +181,6 @@
 		"tooltip": false
 	},
 
-	"custom/gcal-calendar": {
-    "exec": "~/.config/waybar/scripts/gcal-next-event.py",
-    "format": " {} ",
-    "return-type": "json",
-    "interval": 300,
-    "tooltip": true
-	},
-
 	"bluetooth": {
 		"format": "  {status}  ",
 		"format-disabled": "", // an empty format will hide the module
@@ -168,4 +190,9 @@
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 		"on-click": "~/.config/waybar/scripts/rofi-bluetooth.sh"
 	}
+
+	// "image#album-art": {
+	// 	"path": "/home/murt/Pictures/test.jpg",
+	// 	"interval": 5
+	// }
 }

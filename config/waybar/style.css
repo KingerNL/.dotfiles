@@ -122,11 +122,19 @@ window#waybar {
 }
 
 #pulseaudio,
-#network,
-#battery,
+#custom-network,
+#custom-battery,
 #tray {
   padding: 0px 10px;
   margin: 2px 2px;
+}
+
+#custom-network.robot {
+	color: @accent;
+}
+
+#custom-network.offline {
+	color: @muted;
 }
 
 #custom-cava {
@@ -153,10 +161,26 @@ window#waybar {
   font-size: 14px;
 }
 
+#custom-usb.empty {
+  border-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+#custom-eww-background.off {
+  color: @muted;
+}
+
+#custom-eww-background.on {
+  color: @accent;
+}
+
+#image,
 #custom-cava,
 #mpris,
 #bluetooth,
 #custom-usb,
+#custom-eww-background,
 #custom-weather,
 #custom-gcal-calendar,
 #custom-github-commits,
@@ -166,7 +190,7 @@ window#waybar {
   border-radius: 0;
 }
 
-#network:hover,
+#custom-network:hover,
 #custom-power:hover,
 #clock:hover,
 #custom-vpn:hover,

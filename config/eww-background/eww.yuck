@@ -1,0 +1,143 @@
+(defpoll DNA_FRAME
+  :interval "90ms"
+  :initial ""
+  "~/.config/eww-background/widgets/dna/dna-frame.sh")
+
+(defpoll BRAIN_FRAME
+  :interval "60ms"
+  :initial ""
+  "~/.config/eww-background/widgets/brain-robot/brain-frame.sh")
+
+(defpoll PROC_RADAR
+  :interval "1s"
+  :initial ""
+  "~/.config/eww-background/widgets/process-radar/proc-radar.sh")
+
+(defpoll PROC_RADAR_MODE
+  :interval "1s"
+  :initial "CPU"
+  "~/.config/eww-background/widgets/process-radar/proc-radar-mode.sh")
+
+(defpoll ROBOT_LINK
+  :interval "1s"
+  :initial "ROBOT LINK"
+  "~/.config/eww-background/widgets/brain-robot/robot-link.sh")
+
+(defpoll FALCON_FRAME
+  :interval "40ms"
+  :initial ""
+  "~/.config/eww-background/widgets/falcon/falcon-frame.sh")
+
+(defpoll FALCON_STATE
+  :interval "250ms"
+  :initial "IDLE"
+  "~/.config/eww-background/widgets/falcon/falcon-state.sh")
+
+(defpoll FALCON_RESPONSE
+  :interval "250ms"
+  :initial "Ask the pig."
+  "~/.config/eww-background/widgets/falcon/falcon-response.sh")
+
+(defpoll FALCON_MODEL
+  :interval "3600s"
+  :initial "gpt-5.5"
+  "~/.config/eww-background/widgets/falcon/falcon-model.sh")
+
+(defvar FALCON_INPUT "")
+
+(defwindow desktop-widget
+  :monitor 0
+  :geometry (geometry
+    :x "0%"
+    :y "0%"
+    :width "100%"
+    :height "100%"
+    :anchor "center")
+  :stacking "bottom"
+  :exclusive false
+  :focusable "ondemand"
+  :namespace "desktop-widget"
+  (overlay
+    (box
+      :class "desktop-root"
+      :hexpand true
+      :vexpand true)
+    (box
+      :halign "end"
+      :valign "start"
+      (box
+        :class "dna-card"
+        (overlay
+          (label :class "dna-frame" :text DNA_FRAME)
+          (box
+            :class "proc-radar-card"
+            :halign "center"
+            :valign "center"
+            :orientation "v"
+            :space-evenly false
+            (box
+              :orientation "v"
+              :space-evenly false
+              (box
+                :class "proc-radar-tabs"
+                :space-evenly false
+                :halign "center"
+                :vexpand false
+                (button
+                  :class {PROC_RADAR_MODE == "CPU" ? "proc-radar-tab active" : "proc-radar-tab"}
+                  :onclick "bash -lc '/home/murt/.config/eww-background/widgets/process-radar/proc-radar-toggle.sh cpu'"
+                  "[CPU]")
+                (button
+                  :class {PROC_RADAR_MODE == "MEM" ? "proc-radar-tab active" : "proc-radar-tab"}
+                  :onclick "bash -lc '/home/murt/.config/eww-background/widgets/process-radar/proc-radar-toggle.sh mem'"
+                  "[MEM]"))
+              (label
+                :class "proc-radar-text"
+                :vexpand false
+                :text PROC_RADAR))))))
+    (box
+    :halign "end"
+    :valign "center"
+    (box
+      :class "hippo-card"
+      (overlay
+        (label :class "brain-frame" :text BRAIN_FRAME)
+        (box
+          :class "robot-link-card"
+          :halign "center"
+          :valign "center"
+          (label :class "robot-link-text" :text ROBOT_LINK)))))
+    (box
+      :halign "start"
+      :valign "center"
+      (box
+        :class "falcon-card"
+        :orientation "v"
+        :space-evenly false
+        (box
+          :class "falcon-header"
+          :space-evenly false
+          (label
+            :class "falcon-model"
+            :hexpand true
+            :xalign 0
+            :text FALCON_MODEL)
+          (label
+            :class "falcon-character"
+            :xalign 1
+            :text "Pigma Dengar"))
+        (label :class "falcon-frame" :text FALCON_FRAME)
+        (box
+          :class "falcon-status-row"
+          :space-evenly false
+          (label :class "falcon-title" :text "STAR WOLF")
+          (label :class "falcon-state" :text FALCON_STATE))
+        (input
+          :class "falcon-input"
+          :value FALCON_INPUT
+          :placeholder "ask pigma"
+          :onaccept "bash -lc '/home/murt/.config/eww-background/widgets/falcon/falcon-submit.sh \"{}\"'")
+        (label
+          :class "falcon-response"
+          :xalign 0
+          :text FALCON_RESPONSE)))))

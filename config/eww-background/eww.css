@@ -1,0 +1,157 @@
+* {
+  all: unset;
+  font-family: "Overpass", "CaskaydiaCove Nerd Font", sans-serif;
+}
+
+window {
+  background: transparent;
+}
+
+.desktop-root {
+  background: transparent;
+}
+
+.dna-card {
+  margin-top: 100px;
+  margin-right: 100px;
+  padding: 10px 12px;
+  border: 1px solid #ec4935;
+  background: rgba(50, 48, 47, 0.72);
+}
+
+.dna-frame {
+  color: #bdae93;
+  font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font", monospace;
+  font-size: 12px;
+}
+
+.proc-radar-card {
+	margin-left: 160px;
+	margin-top: -100px;
+  padding: 5px 7px;
+  border: 1px solid #de4837;
+  background: #2f2d2c;
+}
+
+.proc-radar-tabs {
+  margin: 0;
+  margin-bottom: 2px;
+  padding: 0;
+}
+
+.proc-radar-tab {
+  background: transparent;
+  border: none;
+  color: #3c3836;
+  font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font", monospace;
+  font-size: 10px;
+  margin: 0 2px;
+  padding: 0;
+  min-height: 0;
+}
+
+.proc-radar-tab label {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
+
+.proc-radar-tab.active {
+  color: #ec4935;
+}
+
+.proc-radar-text {
+  color: #bdae93;
+  font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font", monospace;
+  font-size: 10px;
+}
+
+.hippo-card {
+  margin-top: 190px;
+  margin-right: 160px;
+  border: 1px solid #ec4935;
+  background: rgba(50, 48, 47, 0.72);
+}
+
+.brain-frame {
+  color: #bdae93;
+  font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font", monospace;
+  font-size: 8px;
+  min-width: 280px;
+}
+
+.robot-link-card {
+	margin-left: 130px;
+	margin-top: 130px;
+  padding: 5px 7px;
+  border: 1px solid #de4837;
+  background: #2f2d2c;
+}
+
+.robot-link-text {
+  color: #bdae93;
+  font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font", monospace;
+  font-size: 10px;
+}
+
+.falcon-card {
+  margin-left: 100px;
+  margin-top: 180px;
+  padding: 8px 10px;
+  border: 1px solid #ec4935;
+  background: rgba(50, 48, 47, 0.72);
+}
+
+.falcon-frame {
+  color: #bdae93;
+  font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font", monospace;
+  font-size: 12px;
+}
+
+.falcon-status-row {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.falcon-title,
+.falcon-state,
+.falcon-model,
+.falcon-character,
+.falcon-input,
+.falcon-response {
+  color: #bdae93;
+  font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font", monospace;
+  font-size: 10px;
+}
+
+.falcon-title {
+  color: #ec4935;
+  margin-right: 10px;
+}
+
+.falcon-header {
+  margin-bottom: 3px;
+}
+
+.falcon-model {
+  color: #ec4935;
+}
+
+.falcon-character {
+  color: #ec4935;
+}
+
+.falcon-state {
+  color: #3c3836;
+}
+
+.falcon-input {
+  margin-top: 2px;
+  padding: 2px 4px;
+  border: 1px solid #504945;
+  background: #282828;
+}
+
+.falcon-response {
+  margin-top: 4px;
+}
