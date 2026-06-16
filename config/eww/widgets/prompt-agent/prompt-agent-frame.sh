@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BASE="$HOME/.config/eww-background/widgets/falcon"
+BASE="$HOME/.config/eww/widgets/prompt-agent"
 FRAMES_DIR="$BASE/frames"
 IDLE_FRAME="$BASE/idle"
-STATE_FILE="/tmp/eww-falcon-${UID}.state"
+STATE_FILE="/tmp/eww-prompt-agent-${UID}.state"
 FRAME_DELAY_MS=40
 FRAME_COUNT=22
 

@@ -167,11 +167,11 @@ window#waybar {
   padding: 0;
 }
 
-#custom-eww-background.off {
+#custom-eww.off {
   color: @muted;
 }
 
-#custom-eww-background.on {
+#custom-eww.on {
   color: @accent;
 }
 
@@ -180,7 +180,7 @@ window#waybar {
 #mpris,
 #bluetooth,
 #custom-usb,
-#custom-eww-background,
+#custom-eww,
 #custom-weather,
 #custom-gcal-calendar,
 #custom-github-commits,

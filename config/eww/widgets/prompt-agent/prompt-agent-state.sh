@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-STATE_FILE="/tmp/eww-falcon-${UID}.state"
+STATE_FILE="/tmp/eww-prompt-agent-${UID}.state"
 
 if [[ -r "$STATE_FILE" ]]; then
   read -r state < "$STATE_FILE" || state="idle"

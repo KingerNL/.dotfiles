@@ -16,7 +16,7 @@
 			"clock", 
 			"custom/weather",
 			"custom/usb",
-			"custom/eww-background"
+			"custom/eww"
 		]
 	},
 
@@ -106,14 +106,14 @@
 		"format": "{}"
 	},
 
-	"custom/eww-background": {
-		"exec": "~/.config/waybar/scripts/eww-background-toggle.sh status",
+	"custom/eww": {
+		"exec": "~/.config/waybar/scripts/eww-toggle.sh status",
 		"return-type": "json",
 		"interval": 2,
-		"format": " {} ",
+		"format": "  {}  ",
 		"tooltip": true,
-		"on-click": "~/.config/waybar/scripts/eww-background-toggle.sh toggle",
-		"on-click-right": "~/.config/waybar/scripts/eww-background-toggle.sh reload"
+		"on-click": "~/.config/waybar/scripts/eww-toggle.sh toggle",
+		"on-click-right": "~/.config/waybar/scripts/eww-toggle.sh reload"
 	},
 
 	"custom/vpn": {

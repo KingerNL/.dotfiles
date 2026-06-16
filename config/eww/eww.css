@@ -94,7 +94,7 @@ window {
   font-size: 10px;
 }
 
-.falcon-card {
+.prompt-agent-card {
   margin-left: 100px;
   margin-top: 180px;
   padding: 8px 10px;
@@ -102,56 +102,56 @@ window {
   background: rgba(50, 48, 47, 0.72);
 }
 
-.falcon-frame {
+.prompt-agent-frame {
   color: #bdae93;
   font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font", monospace;
   font-size: 12px;
 }
 
-.falcon-status-row {
+.prompt-agent-status-row {
   margin-top: 4px;
   margin-bottom: 4px;
 }
 
-.falcon-title,
-.falcon-state,
-.falcon-model,
-.falcon-character,
-.falcon-input,
-.falcon-response {
+.prompt-agent-title,
+.prompt-agent-state,
+.prompt-agent-model,
+.prompt-agent-character,
+.prompt-agent-input,
+.prompt-agent-response {
   color: #bdae93;
   font-family: "CaskaydiaCove Nerd Font Mono", "Symbols Nerd Font", monospace;
   font-size: 10px;
 }
 
-.falcon-title {
+.prompt-agent-title {
   color: #ec4935;
   margin-right: 10px;
 }
 
-.falcon-header {
+.prompt-agent-header {
   margin-bottom: 3px;
 }
 
-.falcon-model {
+.prompt-agent-model {
   color: #ec4935;
 }
 
-.falcon-character {
+.prompt-agent-character {
   color: #ec4935;
 }
 
-.falcon-state {
+.prompt-agent-state {
   color: #3c3836;
 }
 
-.falcon-input {
+.prompt-agent-input {
   margin-top: 2px;
   padding: 2px 4px;
   border: 1px solid #504945;
   background: #282828;
 }
 
-.falcon-response {
+.prompt-agent-response {
   margin-top: 4px;
 }

@@ -2,9 +2,9 @@
 set -euo pipefail
 
 EWW="${EWW:-$HOME/.local/bin/eww}"
-CONFIG="$HOME/.config/eww-background"
+CONFIG="$HOME/.config/eww"
 WINDOW="desktop-widget"
-STATE_FILE="/tmp/eww-background-${UID}.state"
+STATE_FILE="/tmp/eww-${UID}.state"
 
 json_escape() {
   local value=${1:-}

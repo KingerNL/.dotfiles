@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-FRAMES_DIR="$HOME/.config/eww-background/widgets/brain-robot/brain-frames"
+FRAMES_DIR="$HOME/.config/eww/widgets/brain-robot/brain-frames"
 FRAME_DELAY_MS=60
 FRAME_COUNT=160
 

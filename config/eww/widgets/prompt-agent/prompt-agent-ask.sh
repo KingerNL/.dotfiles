@@ -4,11 +4,12 @@ set -euo pipefail
 prompt=${*:-}
 prompt=${prompt//$'\n'/ }
 
-STATE_FILE="/tmp/eww-falcon-${UID}.state"
-RESPONSE_FILE="/tmp/eww-falcon-${UID}.response"
-LOCK_DIR="/tmp/eww-falcon-${UID}.lock"
+STATE_FILE="/tmp/eww-prompt-agent-${UID}.state"
+RESPONSE_FILE="/tmp/eww-prompt-agent-${UID}.response"
+LOCK_DIR="/tmp/eww-prompt-agent-${UID}.lock"
 OPENCODE="${OPENCODE:-$HOME/.opencode/bin/opencode}"
-PERSONA_FILE="$HOME/.config/eww-background/widgets/falcon/pigma-persona.txt"
+PERSONA_FILE="$HOME/.config/eww/widgets/prompt-agent/pigma-persona.txt"
+STREAM_FILTER="$HOME/.config/eww/widgets/prompt-agent/prompt-agent-stream-filter.py"
 
 if [[ -z "${prompt// }" ]]; then
   exit 0
@@ -39,21 +40,12 @@ printf 'Thinking.\n' > "$RESPONSE_FILE"
     persona=$(<"$PERSONA_FILE")
   fi
 
-  answer=$("$OPENCODE" run --dir "$HOME" "$persona
+  "$OPENCODE" run --dir "$HOME" "$persona
 
 Operational constraints:
 - Do not modify files.
 - Do not run tools unless absolutely necessary.
 - Answer the user's prompt directly.
 
-User asks: $prompt" 2>&1 || true)
-
-  if [[ -z "${answer// }" ]]; then
-    answer="No response."
-  fi
-
-  printf '%s\n' "$answer" \
-    | sed -r 's/\x1B\[[0-9;?]*[ -\/]*[@-~]//g' \
-    | sed -E '/^[[:space:]]*>[[:space:]]*(build|plan|ask|run)[[:space:]]*(·|\\.)?[[:space:]]*/Id; /^[[:space:]]*$/d' \
-    > "$RESPONSE_FILE"
+User asks: $prompt" 2>&1 | "$STREAM_FILTER" "$RESPONSE_FILE" || true
 ) >/dev/null 2>&1 &

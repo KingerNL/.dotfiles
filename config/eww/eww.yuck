@@ -1,49 +1,49 @@
 (defpoll DNA_FRAME
   :interval "90ms"
   :initial ""
-  "~/.config/eww-background/widgets/dna/dna-frame.sh")
+  "~/.config/eww/widgets/dna/dna-frame.sh")
 
 (defpoll BRAIN_FRAME
   :interval "60ms"
   :initial ""
-  "~/.config/eww-background/widgets/brain-robot/brain-frame.sh")
+  "~/.config/eww/widgets/brain-robot/brain-frame.sh")
 
 (defpoll PROC_RADAR
   :interval "1s"
   :initial ""
-  "~/.config/eww-background/widgets/process-radar/proc-radar.sh")
+  "~/.config/eww/widgets/process-radar/proc-radar.sh")
 
 (defpoll PROC_RADAR_MODE
   :interval "1s"
   :initial "CPU"
-  "~/.config/eww-background/widgets/process-radar/proc-radar-mode.sh")
+  "~/.config/eww/widgets/process-radar/proc-radar-mode.sh")
 
 (defpoll ROBOT_LINK
   :interval "1s"
   :initial "ROBOT LINK"
-  "~/.config/eww-background/widgets/brain-robot/robot-link.sh")
+  "~/.config/eww/widgets/brain-robot/robot-link.sh")
 
-(defpoll FALCON_FRAME
+(defpoll PROMPT_AGENT_FRAME
   :interval "40ms"
   :initial ""
-  "~/.config/eww-background/widgets/falcon/falcon-frame.sh")
+  "~/.config/eww/widgets/prompt-agent/prompt-agent-frame.sh")
 
-(defpoll FALCON_STATE
+(defpoll PROMPT_AGENT_STATE
   :interval "250ms"
   :initial "IDLE"
-  "~/.config/eww-background/widgets/falcon/falcon-state.sh")
+  "~/.config/eww/widgets/prompt-agent/prompt-agent-state.sh")
 
-(defpoll FALCON_RESPONSE
+(defpoll PROMPT_AGENT_RESPONSE
   :interval "250ms"
   :initial "Ask the pig."
-  "~/.config/eww-background/widgets/falcon/falcon-response.sh")
+  "~/.config/eww/widgets/prompt-agent/prompt-agent-response.sh")
 
-(defpoll FALCON_MODEL
+(defpoll PROMPT_AGENT_MODEL
   :interval "3600s"
   :initial "gpt-5.5"
-  "~/.config/eww-background/widgets/falcon/falcon-model.sh")
+  "~/.config/eww/widgets/prompt-agent/prompt-agent-model.sh")
 
-(defvar FALCON_INPUT "")
+(defvar PROMPT_AGENT_INPUT "")
 
 (defwindow desktop-widget
   :monitor 0
@@ -85,11 +85,11 @@
                 :vexpand false
                 (button
                   :class {PROC_RADAR_MODE == "CPU" ? "proc-radar-tab active" : "proc-radar-tab"}
-                  :onclick "bash -lc '/home/murt/.config/eww-background/widgets/process-radar/proc-radar-toggle.sh cpu'"
+                  :onclick "bash -lc '/home/murt/.config/eww/widgets/process-radar/proc-radar-toggle.sh cpu'"
                   "[CPU]")
                 (button
                   :class {PROC_RADAR_MODE == "MEM" ? "proc-radar-tab active" : "proc-radar-tab"}
-                  :onclick "bash -lc '/home/murt/.config/eww-background/widgets/process-radar/proc-radar-toggle.sh mem'"
+                  :onclick "bash -lc '/home/murt/.config/eww/widgets/process-radar/proc-radar-toggle.sh mem'"
                   "[MEM]"))
               (label
                 :class "proc-radar-text"
@@ -111,33 +111,33 @@
       :halign "start"
       :valign "center"
       (box
-        :class "falcon-card"
+        :class "prompt-agent-card"
         :orientation "v"
         :space-evenly false
         (box
-          :class "falcon-header"
+          :class "prompt-agent-header"
           :space-evenly false
           (label
-            :class "falcon-model"
+            :class "prompt-agent-model"
             :hexpand true
             :xalign 0
-            :text FALCON_MODEL)
+            :text PROMPT_AGENT_MODEL)
           (label
-            :class "falcon-character"
+            :class "prompt-agent-character"
             :xalign 1
             :text "Pigma Dengar"))
-        (label :class "falcon-frame" :text FALCON_FRAME)
+        (label :class "prompt-agent-frame" :text PROMPT_AGENT_FRAME)
         (box
-          :class "falcon-status-row"
+          :class "prompt-agent-status-row"
           :space-evenly false
-          (label :class "falcon-title" :text "STAR WOLF")
-          (label :class "falcon-state" :text FALCON_STATE))
+          (label :class "prompt-agent-title" :text "STAR WOLF")
+          (label :class "prompt-agent-state" :text PROMPT_AGENT_STATE))
         (input
-          :class "falcon-input"
-          :value FALCON_INPUT
+          :class "prompt-agent-input"
+          :value PROMPT_AGENT_INPUT
           :placeholder "ask pigma"
-          :onaccept "bash -lc '/home/murt/.config/eww-background/widgets/falcon/falcon-submit.sh \"{}\"'")
+          :onaccept "bash -lc '/home/murt/.config/eww/widgets/prompt-agent/prompt-agent-submit.sh \"{}\"'")
         (label
-          :class "falcon-response"
+          :class "prompt-agent-response"
           :xalign 0
-          :text FALCON_RESPONSE)))))
+          :text PROMPT_AGENT_RESPONSE)))))

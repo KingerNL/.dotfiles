@@ -2,8 +2,8 @@
 set -euo pipefail
 
 EWW="${EWW:-$HOME/.local/bin/eww}"
-CONFIG="$HOME/.config/eww-background"
-STATE_FILE="/tmp/eww-background-${UID}.state"
+CONFIG="$HOME/.config/eww"
+STATE_FILE="/tmp/eww-${UID}.state"
 
 "$EWW" --force-wayland -c "$CONFIG" daemon >/dev/null 2>&1 || true
 "$EWW" --force-wayland -c "$CONFIG" close desktop-widget >/dev/null 2>&1 || true

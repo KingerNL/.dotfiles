@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-RESPONSE_FILE="/tmp/eww-falcon-${UID}.response"
-STATE_FILE="/tmp/eww-falcon-${UID}.state"
+RESPONSE_FILE="/tmp/eww-prompt-agent-${UID}.response"
+STATE_FILE="/tmp/eww-prompt-agent-${UID}.state"
 
 state="idle"
 if [[ -r "$STATE_FILE" ]]; then
@@ -10,6 +10,11 @@ if [[ -r "$STATE_FILE" ]]; then
 fi
 
 if [[ "$state" == "talking" ]]; then
+  if [[ -s "$RESPONSE_FILE" ]] && ! grep -qxE 'Thinking\.{1,3}' "$RESPONSE_FILE"; then
+    fold -s -w 46 "$RESPONSE_FILE" | sed -n '1,8p'
+    exit 0
+  fi
+
   case $(( ($(date +%s%3N) / 500) % 3 )) in
     0) printf 'Thinking.\n' ;;
     1) printf 'Thinking..\n' ;;
